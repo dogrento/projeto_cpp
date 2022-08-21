@@ -11,7 +11,32 @@
 
 
 #include "pessoa_class.h"
+#include <string.h> 
+#include <iostream> 
+using std::cout;
+using std::endl;
 	
+/*
+ * Construtor
+ *
+ * */
+void Pessoa::Init(int diaNasc, int mesNasc, int anoNasc,const char nomeP[]){
+	dia = diaNasc;
+	mes = mesNasc;
+	ano = anoNasc;
+	idade = 0;
+	strcpy(nome, nomeP);
+}
+
+Pessoa::Pessoa(int diaNasc, int mesNasc, int anoNasc, const char nome[]){
+	Init(diaNasc, mesNasc, anoNasc, nome);
+}
+
+Pessoa::Pessoa(){
+	Init(0, 0, 0);
+}
+
+
 /*Calcula a idade considerando a data atual
  *
  * params: note que não precisa passar o tipo pessoa no param
@@ -23,7 +48,7 @@
  *
  * */
 
-void calcula_idade(int diaAtual, int mesAtual, int anoAtual){
+void Pessoa::calcula_idade(int diaAtual, int mesAtual, int anoAtual){
 	
 	//o campo idade apontado por p recebe:
 	idade = anoAtual - ano;
@@ -43,10 +68,14 @@ void calcula_idade(int diaAtual, int mesAtual, int anoAtual){
 				idade = idade - 1;
 			}
 		}
+	print_info(idade, nome);		
 	}
 }
 
-int getIdade(){
+int Pessoa::getIdade(){
 	return idade ;
 }
 
+void Pessoa::print_info(int idade, char nome[]){
+	cout << "Pessoa: " << nome << ", Idade: " << idade << endl;
+}

@@ -34,55 +34,31 @@ class Pessoa{
 	    mes,
 	    ano,
 	    idade;
+	
+	char nome[30];
 
 	/*
 	 *METODOS DA CLASSE
+	 * 
+	 * CHAMANDO OS METODOS QUE ESTAO DEFINIDOS EM PESSOA_CLASS.CPP
+	 *
+	 * 
 	 * */
-	//criando CONSTRUCT 
-	// deixando o construct e função publico(acesso de todos os arquivos do projeto).
+
 	public:
-	Pessoa(int diaNasc, int mesNasc, int anoNasc){
-		dia = diaNasc;
-		mes = mesNasc;
-		ano = anoNasc;
-	}
 	
-	/*Calcula a idade considerando a data atual
-	 *
-	 * params: note que não precisa passar o tipo pessoa no param
-	 * 	   int dia atual
-	 * 	   int mes atual
-	 * 	   int ano atual					
-	 *
-	 * return: função com passsagem por referencia*
-	 *
-	 * */
+	// contructor
+	// com parametros default, *note, valores default de params aparecem na assinatura 
+	// do metodo (no arquivo .h e não em sua implementação (.cpp))
+	Pessoa(int diaNasc, int mesNasc, int anoNasc, const char nameP[] = "");
 
-	void calcula_idade(int diaAtual, int mesAtual, int anoAtual){
-		
-		//o campo idade apontado por p recebe:
-		idade = anoAtual - ano;
-		
-		// se o mes do aniversário da pessoa for maior que o atual,
-		if(mes > mesAtual){
-			// ele nao fez aniversario ainda
-			idade = idade - 1;
-		}
-		// caso contrario o aniversario vai depender do dia do mes
-		else{
-			//se o mes da pessoa for igual ao atual,
-			if(mes == mesAtual){
-				// se o dia da pessoa for > que o dia atual,
-				if(dia > diaAtual){
-					// nao fez aniversario ainda
-					idade = idade - 1;
-				}
-			}
-		}
-	}
-
-	int getIdade(){
-		return idade ;
-	}
+	// Toda classe deve ter uma função-membro  contrutora sem parametro;
+	Pessoa();
+	void Init(int diaNasc, int mesNasc, int anoNasc,const char nomeP[] = "");
+	
+	// metodos gerais
+	void calcula_idade(int diaAtual, int mesAtual, int anoAtual);
+	int getIdade();
+	void print_info(int idade, char nome[]);
 } ;
 
