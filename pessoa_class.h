@@ -1,19 +1,6 @@
-/*
- *
- * 
- * INTRODUÇÃO AO C++
- * 
- * PARA COMPILAR C++, USAR g++ -o nome.c outro.h ...
- *
- * NOTE QUE A FUNÇÃO MAIN ESTÁ DIMINUIDO
- *
- *
- * 
- * */
-
-
 
 #include <stdio.h>
+#include "universidade_class.h" 
 
 /*
  *Criando class PRIVADA com função ja dentro dele (principio de OO)
@@ -37,10 +24,13 @@ class Pessoa{
 	
 	char nome[30];
 
+	// referencia ao objeto associado (Universidade)
+	Universidade* pUnivFiliado; 
+
 	/*
 	 *METODOS DA CLASSE
 	 * 
-	 * CHAMANDO OS METODOS QUE ESTAO DEFINIDOS EM PESSOA_CLASS.CPP
+	 * METODOS QUE ESTAO DEFINIDOS EM PESSOA_CLASS.CPP
 	 *
 	 * 
 	 * */
@@ -60,5 +50,9 @@ class Pessoa{
 	void calcula_idade(int diaAtual, int mesAtual, int anoAtual);
 	int getIdade();
 	void print_info(int idade, char nome[]);
+
+	//metodos que permite associar a outras classes 
+	void setUnivFiliado(Universidade* pu);
+	void OndeTrabalho();
 } ;
 

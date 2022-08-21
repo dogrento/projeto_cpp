@@ -4,6 +4,7 @@ class Principal{
 
 	// criando atributos de classe do tipo pessoa
 	private:
+
 		Pessoa Douglas;
 		Pessoa Einstein;
 		Pessoa Newton;
@@ -11,6 +12,8 @@ class Principal{
 		int diaAtual,
 		    mesAtual,
 		    anoAtual;
+
+		Universidade UTFPR;
 
 	public:
 		//contructor

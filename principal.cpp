@@ -1,3 +1,4 @@
+#include <time.h>
 #include <iostream>
 using std::cout;
 using std::cin;
@@ -11,15 +12,34 @@ Principal::Principal(){
 	Einstein.Init(14,3,1879, "Albert Einstein");
 	Newton.Init(4,1,1643, "Isaac Newton");
 
-	cout << "Informe a data atual:" << endl;
-	cin >> diaAtual >> mesAtual >> anoAtual;
+	UTFPR.setNome("UTFPR");
+
+	Douglas.setUnivFiliado(&UTFPR);
+
+	// ponteiro do tipo struct tm, que contem data e hora
+	struct tm* local;
+	time_t segundos;
+	time(&segundos);
+	local = localtime(&segundos);
+
+	//retorna o dia
+	diaAtual = local -> tm_mday;
+	//retorna o mes
+	mesAtual = local -> tm_mon+1;
+
+	//retorna o ano
+	// é necessário add 1900, pois o sistema retorna a partir desse ano
+	// ao inves de 2022, retorna 122
+	anoAtual = local -> tm_year + 1900;
 
 	Exec();
 }
 
 //metodo Exec
 void Principal::Exec(){
-	Douglas.calcula_idade(21,8,2022);
-	Newton.calcula_idade(21,8,2022);
-	Einstein.calcula_idade(21,8,2022);
+	Douglas.calcula_idade(diaAtual, mesAtual, anoAtual);
+	Newton.calcula_idade(diaAtual, mesAtual, anoAtual);
+	Einstein.calcula_idade(diaAtual, mesAtual, anoAtual);
+
+	Douglas.OndeTrabalho();
 } 
