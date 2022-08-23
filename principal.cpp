@@ -13,8 +13,16 @@ Principal::Principal(){
 	Newton.Init(4,1,1643, "Isaac Newton");
 
 	UTFPR.setNome("UTFPR");
+	UTFPR.setLocal("Curitiba, PR, BR");
+
+	Princeton.setNome("Princeton");
+	Princeton.setLocal("Nova Jersey, EUA");
+	Cambridge.setNome("Cambridge");
+	Cambridge.setLocal("Cambridge, Inglaterra");
 
 	Douglas.setUnivFiliado(&UTFPR);
+	Einstein.setUnivFiliado(&Princeton);
+	Newton.setUnivFiliado(&Cambridge);
 
 	// ponteiro do tipo struct tm, que contem data e hora
 	struct tm* local;
@@ -42,4 +50,6 @@ void Principal::Exec(){
 	Einstein.calcula_idade(diaAtual, mesAtual, anoAtual);
 
 	Douglas.OndeTrabalho();
+	Einstein.OndeTrabalho();
+	Newton.OndeTrabalho();
 } 

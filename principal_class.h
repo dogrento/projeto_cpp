@@ -14,6 +14,8 @@ class Principal{
 		    anoAtual;
 
 		Universidade UTFPR;
+		Universidade Princeton;
+		Universidade Cambridge;
 
 	public:
 		//contructor

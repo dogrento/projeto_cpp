@@ -90,5 +90,8 @@ void Pessoa::setUnivFiliado(Universidade* pu){
 }
 
 void Pessoa::OndeTrabalho(){
-	cout << nome << "trabalha para: " << pUnivFiliado->getNome() << endl;
+	if(pUnivFiliado)
+		cout << nome << "trabalha para: " << pUnivFiliado->getNome() << "em: " << pUnivFiliado->getLocal() << endl;
+	else
+		cout << nome << "nao está associado a nenhema universidade." << endl;
 }
