@@ -1,3 +1,6 @@
+#ifndef _PRINCIPAL_H_
+#define _PRINCIPAL_H_
+
 #include "pessoa.h"
 
 class Principal{
@@ -23,3 +26,5 @@ class Principal{
 		void Exec();
 			
 };
+
+#endif

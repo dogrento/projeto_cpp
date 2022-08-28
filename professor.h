@@ -1,3 +1,6 @@
+#ifndef _PROFESSOR_H_
+#define _PROFESSOR_H_
+
 #include <stdio.h>
 
 #include "pessoa.h"
@@ -17,3 +20,5 @@ class Professor :public Pessoa{
 		void getLocalTrabalho(Universidade* pu);
 		void getDepartamento();
 }
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef _PESSOA_H_
+#define _PESSOA_H_
 
 #include <stdio.h>
 #include "universidade.h" 
@@ -56,3 +58,4 @@ class Pessoa{
 	void OndeTrabalho();
 } ;
 
+#endif
