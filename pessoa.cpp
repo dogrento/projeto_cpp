@@ -10,7 +10,7 @@
 
 
 
-#include "pessoa_class.h"
+#include "pessoa.h"
 #include <string.h> 
 #include <iostream> 
 using std::cout;

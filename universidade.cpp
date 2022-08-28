@@ -1,4 +1,4 @@
-#include "universidade_class.h"
+#include "universidade.h"
 #include <string.h>
 
 //constructor

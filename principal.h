@@ -1,4 +1,4 @@
-#include "pessoa_class.h"
+#include "pessoa.h"
 
 class Principal{
 

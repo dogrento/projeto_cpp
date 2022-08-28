@@ -11,7 +11,7 @@
 
 //importando arquivo.h onde está struct com constructor
 #include <stdio.h>
-#include "principal_class.h"
+#include "principal.h"
 
 
 int main(){

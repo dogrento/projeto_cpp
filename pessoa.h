@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-#include "universidade_class.h" 
+#include "universidade.h" 
 
 /*
  *Criando class PRIVADA com função ja dentro dele (principio de OO)

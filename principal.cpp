@@ -3,7 +3,7 @@
 using std::cout;
 using std::cin;
 using std::endl;
-#include "principal_class.h"
+#include "principal.h"
 
 //metodo construtor
 //
