@@ -3,31 +3,24 @@
 
 #include <stdio.h>
 #include "universidade.h" 
+#include "departamento.h"
 
-/*
- *Criando class PRIVADA com função ja dentro dele (principio de OO)
- *
- * criando CONSTRUCT: construct inicializa variável
- * 
- * note mudanças em relação ao C
- *
- * */
 class Pessoa{
 	
-	// indicar que struct será publica (pode ser acessada por todo o projeto)
 	// não é recomendado declarar atributos(variaveis) de forma publica.
 	private:
 
 	//declarando atributos da classe Pessoa
-	int dia,
-	    mes,
-	    ano,
-	    idade;
+	int dia_pessoa,
+	    mes_pessoa,
+	    ano_pessoa,
+	    idade_pessoa;
 	
-	char nome[30];
+	char nome_pessoa[30];
 
 	// referencia ao objeto associado (Universidade)
 	Universidade* pUnivFiliado; 
+	Departamento* pDptoFiliado;
 
 	/*
 	 *METODOS DA CLASSE
@@ -42,7 +35,7 @@ class Pessoa{
 	// contructor
 	// com parametros default, *note, valores default de params aparecem na assinatura 
 	// do metodo (no arquivo .h e não em sua implementação (.cpp))
-	Pessoa(int diaNasc, int mesNasc, int anoNasc, const char nameP[] = "");
+	Pessoa(int diaNasc, int mesNasc, int anoNasc, const char nomeP[] = "");
 
 	// Toda classe deve ter uma função-membro  contrutora sem parametro;
 	Pessoa();
@@ -55,6 +48,8 @@ class Pessoa{
 
 	//metodos que permite associar a outras classes 
 	void setUnivFiliado(Universidade* pu);
+	void setDptoFiliado(Departamento* dpto);
+	void getDpto();
 	void OndeTrabalho();
 } ;
 

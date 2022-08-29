@@ -24,6 +24,23 @@ Principal::Principal(){
 	Einstein.setUnivFiliado(&Princeton);
 	Newton.setUnivFiliado(&Cambridge);
 
+	//agregação dos Departamentos
+	ModaUTFPR.setNome("Moda");
+	TecnologiaUTFPR.setNome("Tecnologia da UTFPR");
+	DAELN.setNome("Eletrônica");
+	FisicaPrinceton.setNome("Fisica");
+	MatematicaCambridge.setNome("Matemática");
+
+	UTFPR.setDpto(&DAELN, 0);
+	UTFPR.setDpto(&ModaUTFPR, 1);
+	UTFPR.setDpto(&TecnologiaUTFPR,2);
+	Princeton.setDpto(&FisicaPrinceton,0);
+	Cambridge.setDpto(&MatematicaCambridge,0);
+
+	Douglas.setDptoFiliado(&DAELN);
+	Einstein.setDptoFiliado(&FisicaPrinceton);
+	Newton.setDptoFiliado(&MatematicaCambridge);
+
 	// ponteiro do tipo struct tm, que contem data e hora
 	struct tm* local;
 	time_t segundos;
@@ -52,4 +69,8 @@ void Principal::Exec(){
 	Douglas.OndeTrabalho();
 	Einstein.OndeTrabalho();
 	Newton.OndeTrabalho();
+
+	Douglas.getDpto();
+	Einstein.getDpto();
+	Newton.getDpto();
 } 

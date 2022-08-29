@@ -20,9 +20,16 @@ class Principal{
 		Universidade Princeton;
 		Universidade Cambridge;
 
+		Departamento ModaUTFPR;
+		Departamento TecnologiaUTFPR;
+		Departamento DAELN;
+		Departamento FisicaPrinceton;
+		Departamento MatematicaCambridge;
+
 	public:
 		//contructor
 		Principal();
+		~Principal(){}
 		void Exec();
 			
 };
