@@ -30,14 +30,15 @@ char* Universidade::getLocal(){
 	return local_universidade;
 }
 
-void Universidade::setDpto(Departamento* dpto_pessoa,int ctd){
+void Universidade::setDpto(Departamento* dpto_pessoa){
 	//agregação via ponteiros
-	dpto_list[ctd] = dpto_pessoa;
+	lista_departamento.push_back(dpto_pessoa);
 }
 
 void Universidade::print_dpto(){
-	for(int i=0; i<50; i++){
-		if(dpto_list[i]!=NULL)
-			cout << dpto_list[i]->getNome() << endl;
+	int tam = (int)lista_departamento.size();
+
+	for(int i=0; i<tam; i++){
+		cout << lista_departamento[i]->getNome() << endl;
 	}
 }

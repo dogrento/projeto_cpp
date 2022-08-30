@@ -31,11 +31,11 @@ Principal::Principal(){
 	FisicaPrinceton.setNome("Fisica");
 	MatematicaCambridge.setNome("Matemática");
 
-	UTFPR.setDpto(&DAELN, 0);
-	UTFPR.setDpto(&ModaUTFPR, 1);
-	UTFPR.setDpto(&TecnologiaUTFPR,2);
-	Princeton.setDpto(&FisicaPrinceton,0);
-	Cambridge.setDpto(&MatematicaCambridge,0);
+	UTFPR.setDpto(&DAELN);
+	UTFPR.setDpto(&ModaUTFPR);
+	UTFPR.setDpto(&TecnologiaUTFPR);
+	Princeton.setDpto(&FisicaPrinceton);
+	Cambridge.setDpto(&MatematicaCambridge);
 
 	Douglas.setDptoFiliado(&DAELN);
 	Einstein.setDptoFiliado(&FisicaPrinceton);
@@ -66,11 +66,11 @@ void Principal::Exec(){
 	Newton.calcula_idade(diaAtual, mesAtual, anoAtual);
 	Einstein.calcula_idade(diaAtual, mesAtual, anoAtual);
 
-	Douglas.OndeTrabalho();
-	Einstein.OndeTrabalho();
-	Newton.OndeTrabalho();
+	Douglas.getLocalTrabalho();
+	Einstein.getLocalTrabalho();
+	Newton.getLocalTrabalho();
 
-	Douglas.getDpto();
-	Einstein.getDpto();
-	Newton.getDpto();
+	Douglas.getDepartamento();
+	Einstein.getDepartamento();
+	Newton.getDepartamento();
 } 

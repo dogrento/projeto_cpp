@@ -1,7 +1,8 @@
 #ifndef _PRINCIPAL_H_
 #define _PRINCIPAL_H_
 
-#include "pessoa.h"
+//#include "pessoa.h"
+#include "professor.h"
 
 class Principal{
 
@@ -25,6 +26,10 @@ class Principal{
 		Departamento DAELN;
 		Departamento FisicaPrinceton;
 		Departamento MatematicaCambridge;
+
+		Professor Douglas;
+		Professor Einstein;
+		Professor Newton;
 
 	public:
 		//contructor

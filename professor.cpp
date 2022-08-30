@@ -2,36 +2,49 @@
 using std::cout;
 using std::endl;
 #include "professor.h"
+#include "universidade.h"
 
 // construct
 Professor::Professor(int diaNasc, int mesNasc, int anoNasc, const char* nome):
 	Pessoa(diaNasc, mesNasc, anoNasc, nome)
 {
 	pUnivFiliado = NULL;
-	//pDepartamentoFiliado = NULL;
+	pDptoFiliado = NULL;
 }
 
 Professor::Professor():
 	Pessoa()
 {
 	pUnivFiliado = NULL;
-	//pDepartamentoFiliado = NULL;
+	pDptoFiliado = NULL;
 }
 
 Professor::~Professor()
 {
 	pUnivFiliado = NULL;
-	//pDepartamentoFiliado = NULL;
+	pDptoFiliado = NULL;
 }
 
 void Professor::setUnivFiliado(Universidade* pu){
 	pUnivFiliado = pu;
 }
 
-//void Professor::setDepartamento(Departamento* dpto){
-//	pDepartamentoFiliado = dpto;
-//}
+void Professor::setDptoFiliado(Departamento* ponteiro_departamento){
+	pDptoFiliado = ponteiro_departamento;
+}
 
-void Professor::getLocalTrabalho(Universidade* pu){
-	cout << nome_pessoa << "trabalha para: " << pUnivFiliado->getNome() << endl;	
+// char* Professor::getLocalTrabalho(Universidade* ponteiro_universidade){
+	// cot << ponteiro_universidade->getLocal() << 
+// }
+
+// void Professor::setDpto(Departamento* dpto){
+	// pDptoFiliado = dpto;
+// }
+
+void Professor::getLocalTrabalho(){
+	cout << pUnivFiliado->getNome() << "trabalha para: " << pUnivFiliado->getNome() << endl;	
+}
+
+void getDpto(){
+	cout << 
 }

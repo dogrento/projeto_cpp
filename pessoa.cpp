@@ -73,22 +73,22 @@ void Pessoa::print_info(int idade, char nome[]){
 
  * */
 
-void Pessoa::setUnivFiliado(Universidade* pu){
-	pUnivFiliado = pu;
-}
-
-void Pessoa::setDptoFiliado(Departamento* dpto){
-	// associação pois é armazenado um apontamento para o Departamento
-	pDptoFiliado = dpto;
-}
-
-void Pessoa::getDpto(){
-	cout << nome_pessoa << "trabalha no Departamento: " << pDptoFiliado->getNome() << endl;
-}
-
-void Pessoa::OndeTrabalho(){
-	if(pUnivFiliado)
-		cout << nome_pessoa << "trabalha para: " << pUnivFiliado->getNome() << "em: " << pUnivFiliado->getLocal() << endl;
-	else
-		cout << nome_pessoa << "nao está associado a nenhema universidade." << endl;
-}
+//void Pessoa::setUnivFiliado(Universidade* pu){
+//	pUnivFiliado = pu;
+//}
+//
+//void Pessoa::setDptoFiliado(Departamento* dpto){
+//	// associação pois é armazenado um apontamento para o Departamento
+//	pDptoFiliado = dpto;
+//}
+//
+//void Pessoa::getDepartamento(){
+//	cout << nome_pessoa << "trabalha no Departamento: " << pDptoFiliado->getNome() << endl;
+//}
+//
+//void Pessoa::OndeTrabalho(){
+//	if(pUnivFiliado)
+//		cout << nome_pessoa << "trabalha para: " << pUnivFiliado->getNome() << "em: " << pUnivFiliado->getLocal() << endl;
+//	else
+//		cout << nome_pessoa << "nao está associado a nenhema universidade." << endl;
+//}

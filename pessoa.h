@@ -2,8 +2,8 @@
 #define _PESSOA_H_
 
 #include <stdio.h>
-#include "universidade.h" 
-#include "departamento.h"
+//#include "universidade.h" 
+//#include "departamento.h"
 
 class Pessoa{
 	
@@ -19,8 +19,8 @@ class Pessoa{
 	char nome_pessoa[30];
 
 	// referencia ao objeto associado (Universidade)
-	Universidade* pUnivFiliado; 
-	Departamento* pDptoFiliado;
+//	Universidade* pUnivFiliado; 
+//	Departamento* pDptoFiliado;
 
 	/*
 	 *METODOS DA CLASSE
@@ -47,10 +47,10 @@ class Pessoa{
 	void print_info(int idade, char nome[]);
 
 	//metodos que permite associar a outras classes 
-	void setUnivFiliado(Universidade* pu);
-	void setDptoFiliado(Departamento* dpto);
-	void getDpto();
-	void OndeTrabalho();
+	//void setUnivFiliado(Universidade* pu);
+	//void setDptoFiliado(Departamento* dpto);
+	//void getDepartamento();
+	//void OndeTrabalho();
 } ;
 
 #endif
