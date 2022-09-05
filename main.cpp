@@ -10,7 +10,7 @@
 
 //importando arquivo.h onde está struct com constructor
 #include <stdio.h>
-#include "principal.h"
+#include "Principal/principal.h"
 
 
 int main(){

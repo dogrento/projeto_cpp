@@ -1,2 +1,2 @@
 all:
-	g++ -o main main.cpp pessoa.h pessoa.cpp principal.h principal.cpp universidade.h universidade.cpp departamento.cpp departamento.h professor.h professor.cpp 
+	g++ -o main main.cpp Principal/pessoa.h Principal/pessoa.cpp Principal/principal.h Principal/principal.cpp Principal/universidade.h Principal/universidade.cpp Principal/departamento.cpp Principal/departamento.h Principal/professor.h Principal/professor.cpp 
