@@ -2,7 +2,7 @@
 using std::cout;
 using std::endl;
 #include "professor.h"
-#include "universidade.h"
+//#include "universidade.h"
 
 // construct
 Professor::Professor(int diaNasc, int mesNasc, int anoNasc, const char* nome):
@@ -33,18 +33,10 @@ void Professor::setDptoFiliado(Departamento* ponteiro_departamento){
 	pDptoFiliado = ponteiro_departamento;
 }
 
-// char* Professor::getLocalTrabalho(Universidade* ponteiro_universidade){
-	// cot << ponteiro_universidade->getLocal() << 
-// }
-
-// void Professor::setDpto(Departamento* dpto){
-	// pDptoFiliado = dpto;
-// }
-
 void Professor::getLocalTrabalho(){
-	cout << pUnivFiliado->getNome() << "trabalha para: " << pUnivFiliado->getNome() << endl;	
+	cout << nome_pessoa << " trabalha para: " << pUnivFiliado->getNome() << endl;	
 }
 
-void getDpto(){
-	cout << 
+void Professor::getDpto(){
+	
 }

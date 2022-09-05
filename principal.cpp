@@ -70,7 +70,7 @@ void Principal::Exec(){
 	Einstein.getLocalTrabalho();
 	Newton.getLocalTrabalho();
 
-	Douglas.getDepartamento();
-	Einstein.getDepartamento();
-	Newton.getDepartamento();
+	Douglas.getDpto();
+	Einstein.getDpto();
+	Newton.getDpto();
 } 

@@ -8,7 +8,7 @@
 class Pessoa{
 	
 	// não é recomendado declarar atributos(variaveis) de forma publica.
-	private:
+	protected:
 
 	//declarando atributos da classe Pessoa
 	int dia_pessoa,
@@ -45,12 +45,6 @@ class Pessoa{
 	void calcula_idade(int diaAtual, int mesAtual, int anoAtual);
 	int getIdade();
 	void print_info(int idade, char nome[]);
-
-	//metodos que permite associar a outras classes 
-	//void setUnivFiliado(Universidade* pu);
-	//void setDptoFiliado(Departamento* dpto);
-	//void getDepartamento();
-	//void OndeTrabalho();
 } ;
 
 #endif

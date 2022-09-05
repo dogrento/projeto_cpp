@@ -5,7 +5,6 @@
  * 
  * PARA COMPILAR C++, USAR g++ 
  *
- * NOTE QUE A FUNÇÃO MAIN ESTÁ DIMINUIDO
  * 
  * */
 

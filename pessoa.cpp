@@ -67,28 +67,3 @@ int Pessoa::getIdade(){
 void Pessoa::print_info(int idade, char nome[]){
 	cout << "Pessoa: " << nome_pessoa << ", Idade: " << idade_pessoa << endl;
 }
-
-/*
- *Metodos de associação a outros objetos
-
- * */
-
-//void Pessoa::setUnivFiliado(Universidade* pu){
-//	pUnivFiliado = pu;
-//}
-//
-//void Pessoa::setDptoFiliado(Departamento* dpto){
-//	// associação pois é armazenado um apontamento para o Departamento
-//	pDptoFiliado = dpto;
-//}
-//
-//void Pessoa::getDepartamento(){
-//	cout << nome_pessoa << "trabalha no Departamento: " << pDptoFiliado->getNome() << endl;
-//}
-//
-//void Pessoa::OndeTrabalho(){
-//	if(pUnivFiliado)
-//		cout << nome_pessoa << "trabalha para: " << pUnivFiliado->getNome() << "em: " << pUnivFiliado->getLocal() << endl;
-//	else
-//		cout << nome_pessoa << "nao está associado a nenhema universidade." << endl;
-//}
