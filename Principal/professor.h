@@ -17,10 +17,10 @@ class Professor :public Pessoa{
 		Professor();
 		~Professor();
 
-		void setUnivFiliado(Universidade* pu);
-		void setDptoFiliado(Departamento* ponteiro_departamento);
-		void getLocalTrabalho();
-		void getDpto();
+		void Set_univFiliado(Universidade* pu);
+		void Set_dptoFiliado(Departamento* ponteiro_departamento);
+		void Print_univ();
+		void Print_dpto();
 };
 
 #endif

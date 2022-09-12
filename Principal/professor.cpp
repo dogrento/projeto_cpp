@@ -25,18 +25,18 @@ Professor::~Professor()
 	pDptoFiliado = NULL;
 }
 
-void Professor::setUnivFiliado(Universidade* pu){
+void Professor::Set_univFiliado(Universidade* pu){
 	pUnivFiliado = pu;
 }
 
-void Professor::setDptoFiliado(Departamento* ponteiro_departamento){
+void Professor::Set_dptoFiliado(Departamento* ponteiro_departamento){
 	pDptoFiliado = ponteiro_departamento;
 }
 
-void Professor::getLocalTrabalho(){
+void Professor::Print_univ(){
 	cout << nome_pessoa << " trabalha para: " << pUnivFiliado->getNome() << endl;	
 }
 
-void Professor::getDpto(){
-	
+void Professor::Print_dpto(){
+	cout << nome_pessoa << " trabalha para: " << pDptoFiliado->getNome() << endl;	
 }
