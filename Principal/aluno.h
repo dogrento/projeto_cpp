@@ -6,7 +6,7 @@
 
 class Aluno: public Pessoa{
     private:
-        int id;
+        // int id;
         int RA;
         Departamento* dptoFiliado;
 
@@ -22,8 +22,8 @@ class Aluno: public Pessoa{
         void Set_departamento (Departamento* dpto);
     	Departamento* Get_departamento();
 
-        void Set_id(int i);
-        int Get_id();
+        // void Set_id(int i);
+        // int Get_id();
 
 };
 

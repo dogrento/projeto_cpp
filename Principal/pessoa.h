@@ -14,7 +14,8 @@ class Pessoa{
 	int dia_pessoa,
 	    mes_pessoa,
 	    ano_pessoa,
-	    idade_pessoa;
+	    idade_pessoa,
+		id;
 	
 	char nome_pessoa[30];
 

@@ -5,10 +5,16 @@ Aluno::Aluno(int diaNa, int mesNa, int anoNa, char nome[]):
 Pessoa(diaNa, mesNa, anoNa, nome)
 { }
 
-Aluno::Aluno(int i){
+Aluno::Aluno(int i):
+Pessoa()
+{
     id = i;
     RA = 0;
 }
+
+Aluno::Aluno():
+Pessoa()
+{}
 
 Aluno::~Aluno()
 { }
@@ -29,10 +35,10 @@ Departamento* Aluno::Get_departamento(){
     return dptoFiliado;
 }
 
-void Aluno::Set_id(int i){
-    id = i;
-}
+// void Aluno::Set_id(int i){
+//     id = i;
+// }
 
-int Aluno::Get_id(){
-    return id;
-}
+// int Aluno::Get_id(){
+//     return id;
+// }
