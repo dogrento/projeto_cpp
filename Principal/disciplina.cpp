@@ -1,14 +1,17 @@
 #include "disciplina.h"
 
-Disciplina::Disciplina(char* ac){
+Disciplina::Disciplina(int i, int na, char* ac):
+objListAlunos(na,ac){
+    id = i;
     dptoFiliado = NULL;
-    next = NULL;
 
     strcpy(areaConhecimento, ac);
 }
 
 Disciplina::~Disciplina()
-{}
+{
+    dptoFiliado = NULL;
+}
 
 void Disciplina::Set_id(int i){
     id = i;
@@ -33,4 +36,19 @@ void Disciplina::Set_dpto(Departamento* pd){
 
 Departamento* Disciplina::Get_dpto(){
     return dptoFiliado;
+}
+
+void Disciplina::Inclua_aluno( Aluno* aluno)
+{
+    objListAlunos.Inclua_aluno(aluno);
+}
+
+void Disciplina::Listar_alunos()
+{
+    objListAlunos.Listar_alunos();
+}
+
+void Disciplina::Listar_alunos2()
+{
+    objListAlunos.Listar_alunos2();
 }

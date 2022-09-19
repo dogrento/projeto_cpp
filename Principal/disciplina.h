@@ -2,11 +2,7 @@
 #define _DISCIPLINA_H_
 
 #include "departamento.h"
-
-class Universidade;
-class Disciplina;
-
-
+#include "listaAlunos.h"
 class Disciplina
 { 
 private:
@@ -16,20 +12,24 @@ private:
 		
 	// associa cada disciplina a um departamento;
 	Departamento* dptoFiliado;
+	ListaAlunos objListAlunos;
    
 public:
-	Disciplina(char* ac = "");
+	Disciplina(int i, int na = 45, char* ac= "");
 	~Disciplina();
-		
-	// ponteiros para a lista encadeada;
-	Disciplina* next;
 	
 	void Set_id(int i);	
 	int Get_id();
+
 	void Set_disc(char* n);
 	char* Get_disc();
-	void Set_dpto(Departamento* pd);
+
+	void Set_dpto(Departamento* dpto);
 	Departamento* Get_dpto();
+
+	void Inclua_aluno(Aluno* aluno);
+	void Listar_alunos();
+	void Listar_alunos2();
 };
 
 #endif

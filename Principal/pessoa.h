@@ -19,10 +19,6 @@ class Pessoa{
 	
 	char nome_pessoa[30];
 
-	// referencia ao objeto associado (Universidade)
-//	Universidade* pUnivFiliado; 
-//	Departamento* pDptoFiliado;
-
 	/*
 	 *METODOS DA CLASSE
 	 * 
