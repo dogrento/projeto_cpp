@@ -1,6 +1,8 @@
 #ifndef _ELEMENTODPTO_H_
 #define _ELEMENTODPTO_H_
 
+#include <stdlib.h>
+
 #include "departamento.h"
 
 class ElementoDpto

@@ -24,6 +24,6 @@ Universidade* ElementoUniv::Get_univ()
 
 char* ElementoUniv::Get_nome() 
 {
-    return pUniv->getNome(); 
+    return pUniv->Get_nome(); 
 }
 

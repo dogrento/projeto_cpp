@@ -1,19 +1,14 @@
-//#ifndef _UNIVERSIDADE_CLASS_H
-//#define _UNIVERSIDADE_CLASS_H
-//#pragma once // faz a mesma coisa que os linhas comentadas acima 
-#include "departamento.h"
-#include <vector>
-using namespace std;
+#ifndef _UNIVERSIDADE_H_
+#define _UNIVERSIDADE_H_
+
+#include "listaDpto.h"
 
 class Universidade{
 
 	// atributo da classe universidade
 	private:
-		char nome_universidade[30];
-		char local_universidade[30];
-		//objeto do tipo Departamento
-		//Departamento* dpto_list[50];
-		vector<Departamento*> lista_departamento;
+		char nome_universidade[130];
+		ListaDptos objLDptos;
 
 	// metodos	
 	public:
@@ -23,13 +18,12 @@ class Universidade{
 		//destructor
 		~Universidade();
 
-		void setNome(const char n[]);
-		void setLocal(const char nome_local[]);
-		char* getNome();
-		char* getLocal();
-		void setDpto(Departamento* dpto_pessoa);
-		void print_dpto();
+		void Set_nome(const char n[]);
+		char* Get_nome();
 
+		void Incluir_dpto(Departamento* dpto_pessoa);
+		void Listar_dpto();
+		void Listar_dpto2();
 };
 
-//#endif
+#endif

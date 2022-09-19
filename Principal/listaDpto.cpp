@@ -1,21 +1,25 @@
-#include "listaDisc.h"
+#include <iostream>
+using std::cout;
+using std::endl;
 
-ListaDisc::ListaDisc(int nd, char* n)
+#include "listaDpto.h"
+
+ListaDptos::ListaDptos(int nd,const char* n)
 {
-	num_disc		= nd;
-	count_disc		= 0;           
+	numDpto			= nd;
+	countDpto			= 0;           
 
-	pElementoDiscPrim  = NULL;
-	pElementoDiscAtual = NULL;
+	pElDepartamentoPrim  = NULL;
+	pElDepartamentoAtual = NULL;
 
-	strcpy (nomeDisc, n ); 
+	strcpy (nome, n ); 
 }
 
-ListaDisc::~ListaDisc()
+ListaDptos::~ListaDptos()
 {
-   ElementoDisc *paux1, *paux2;
+   ElementoDpto *paux1, *paux2;
    
-   paux1 = pElementoDiscPrim;
+   paux1 = pElDepartamentoPrim;
    paux2 = paux1;
 
    while (paux1 != NULL)
@@ -25,78 +29,77 @@ ListaDisc::~ListaDisc()
          paux1 = paux2;		 
    }
 
-   pElementoDiscPrim  = NULL;
-   pElementoDiscAtual = NULL;
+   pElDepartamentoPrim  = NULL;
+   pElDepartamentoAtual = NULL;
 }
 
-
-void ListaDisc::Set_nome(const char* n)
+void ListaDptos::Set_nome (const char* n)
 {
-	strcpy(nomeDisc, n);
+	strcpy(nome, n);
 }
 
-void ListaDisc::Incluir_disc(Disciplina* pd)
+void ListaDptos::Inclua_dpto ( Departamento* pd )
 {
     // Aqui � criado um ponteiro para LAluno
-    ElementoDisc* paux;
+    ElementoDpto* paux;
     // Aqui � criado um objeto LAluno, sendo seu endere�o armazenado em aux
-    paux = new ElementoDisc ( );
+    paux = new ElementoDpto ( );
 
     // Aqui recebe uma c�pia do objeto interm.
-    paux->Set_disc ( pd );
+    paux->Set_dpto ( pd );
 
     paux->pNext = NULL;
     paux->pPrev = NULL;
 
     if ( 
-		  ( ( count_disc < num_disc ) && ( pd != NULL) ) 
-		  ( ( num_disc == -1 )		&& ( pd != NULL) )
+		 ( ( countDpto < numDpto ) && ( pd != NULL) ) ||
+		 ( ( numDpto == -1 )		 && ( pd != NULL) ) 
 	   )
     {
     
-      if ( pElementoDiscPrim == NULL )
+      if ( pElDepartamentoPrim == NULL )
       {
-         pElementoDiscPrim   = paux;
-         pElementoDiscAtual  = paux;
+         pElDepartamentoPrim   = paux;
+         pElDepartamentoAtual  = paux;
       }
       else
       {
-         pElementoDiscAtual->pNext	= paux;
-         paux->pPrev				= pElementoDiscAtual;
-         pElementoDiscAtual         = paux;
+         pElDepartamentoAtual->pNext = paux;
+         paux->pPrev            = pElDepartamentoAtual;
+         pElDepartamentoAtual    = paux;
       }
-      count_disc++;
+      countDpto++;
 
     }
     else
     {
        //printf ("Aluno n�o inclu�do. Turma j� lotada em %i alunos \n", numero_alunos );
-	   cout << "Disciplina n�o inclu�da. Quantia de disc. j� lotada em " << num_disc << " disciplinas." << endl;
+	   cout << "Departamento n�o inclu�do. Quantia de deps j� lotada em " << numDpto << " departamentos." << endl;
     }
 }
 
-void ListaDisc::Listar_disc()
+void ListaDptos::Listar_dptos()
 {
-    ElementoDisc* paux;
-    paux = pElementoDiscPrim;
+    ElementoDpto* paux;
+    paux = pElDepartamentoPrim;
 
     while (paux != NULL)
     {
-         //printf(" Aluno %s matriculado na Disciplina %s. \n", aux->getNome(), nome);
-		 cout << " Disciplina " << paux->Get_nome() << " do deparatamento " << nomeDisc << "." << endl;
+         //printf(" Aluno %s matriculado na Disciplina %s. \n", aux->Get_nome(), nome);
+		 cout << " Departamento " << paux->Get_nome() << " da universidade " << nome << "." << endl;
          paux = paux->pNext;
     }
 }
 
-void ListaDisc::Listar_disc2()
+void ListaDptos::Listar_dptos2()
 {
-    ElementoDisc* paux;
-    paux = pElementoDiscAtual;
+    ElementoDpto* paux;
+    paux = pElDepartamentoAtual;
 
     while (paux != NULL)
     {
-       //printf(" Aluno %s matriculado na Disciplina %s \n", aux->getNome(), nome);
-	   cout << " Disciplina " << paux->Get_nome() << " do Departamento " << nomeDisc << "." << endl;
+       //printf(" Aluno %s matriculado na Disciplina %s \n", aux->Get_nome(), nome);
+	   cout << " Departamento " << paux->Get_nome() << " da Universidade" << nome << "." << endl;
        paux = paux->pPrev;
     }
 

@@ -1,3 +1,6 @@
+#include <iostream>
+using std::cout;
+using std::endl;
 #include "listaDisc.h"
 
 ListaDisc::ListaDisc(int nd, char* n){
@@ -7,7 +10,7 @@ ListaDisc::ListaDisc(int nd, char* n){
     pElementoDiscPrim = NULL;
     pElementoDiscAtual = NULL;
 
-    strcpy(nome, n);
+    strcpy(nomeDisc, n);
 }
 
 ListaDisc::~ListaDisc()

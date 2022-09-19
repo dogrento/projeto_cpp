@@ -1,6 +1,8 @@
 #ifndef _LISTADPTO_H_
 #define _LISTADPTO_H_
 
+#include <string.h>
+
 #include "elementoDpto.h"
 #include "departamento.h"
 
@@ -16,9 +18,9 @@ private:
 
 public:
 
-	ListaDptos(int nd = 1000, char* n = "");
+	ListaDptos(int nd = 1000, const char* n = "");
 	~ListaDptos();
-	void Set_nome (char* n);
+	void Set_nome (const char* n);
 	void Inclua_dpto(Departamento* pd);
     void Listar_dptos();
     void Listar_dptos2();

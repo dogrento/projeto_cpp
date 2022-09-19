@@ -1,11 +1,9 @@
 #ifndef _PROFESSOR_H_
 #define _PROFESSOR_H_
 
-#include <stdio.h>
 
 #include "pessoa.h"
 #include "universidade.h"
-//#include "departamento.h"
 
 class Professor :public Pessoa{
 	private:
@@ -19,8 +17,8 @@ class Professor :public Pessoa{
 
 		void Set_univFiliado(Universidade* pu);
 		void Set_dptoFiliado(Departamento* ponteiro_departamento);
-		void Print_univ();
-		void Print_dpto();
+		void Onde_trabalho();
+		void QualDptoTrabalho();
 };
 
 #endif

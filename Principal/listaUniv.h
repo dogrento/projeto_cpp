@@ -1,6 +1,8 @@
 #ifndef _LISTAUNIV_H_
 #define _LISTAUNIV_H_
 
+#include <stdlib.h>
+#include <string.h>
 #include "elementoUniv.h"
 #include "universidade.h"
 

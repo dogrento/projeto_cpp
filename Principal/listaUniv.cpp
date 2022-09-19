@@ -1,4 +1,8 @@
 #include "listaUniv.h"
+#include <iostream>
+using std::cout;
+using std::endl;
+
 
 ListaUnivs::ListaUnivs(int nu, char* n)
 {

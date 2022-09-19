@@ -1,8 +1,8 @@
-#include <string.h> 
-#include <iostream> 
+#include "pessoa.h"
+#include <iostream>
 using std::cout;
 using std::endl;
-#include "pessoa.h"
+
 	
 /*
  * Construtor
@@ -56,14 +56,11 @@ void Pessoa::calcula_idade(int diaAtual, int mesAtual, int anoAtual){
 				idade_pessoa = idade_pessoa - 1;
 			}
 		}
-	print_info(idade_pessoa, nome_pessoa);		
 	}
+	cout << endl << " A idade da Pessoa " << nome_pessoa << " é " << idade_pessoa << "." << endl;
+
 }
 
-int Pessoa::getIdade(){
+int Pessoa::Get_idade(){
 	return idade_pessoa;
-}
-
-void Pessoa::print_info(int idade, char nome[]){
-	cout << "Pessoa: " << nome_pessoa << ", Idade: " << idade_pessoa << endl;
 }
