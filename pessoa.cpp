@@ -1,4 +1,7 @@
 #include "pessoa.h"
+#include <iostream>
+using std::cout;
+using std::endl;
 
 Pessoa::Pessoa(int dia, int mes, int ano, const char nome[]){ // C++ exige const char*. Razao: essa variavel é criada apenas durante a chamada da func 
   diaP = dia;
@@ -19,6 +22,8 @@ void Pessoa::calcIdade(int diaAtual, int mesAtual, int anoAtual){
         idadeP = idadeP-1;
       }
     }
+
+  cout << nomeP << "tem " << idadeP << "anos." << endl;
 }
 
 
