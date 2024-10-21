@@ -11,6 +11,10 @@ Principal::Principal(){
     princeton.setUni("Princeton");
     cambridge.setUni("Cambridge");
 
+    daeln.setDpto("DAELN");
+    fisica.setDpto("FISICA");
+    mat.setDpto("MATEMATICA");
+
     fulano.setUniversidade(&utfpr);
     Einstein.setUniversidade(&princeton);
     Newton.setUniversidade(&cambridge);

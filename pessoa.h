@@ -3,6 +3,7 @@
 
 #include <string.h>
 #include "universidade.h"
+#include "dpto.h"
 
 class Pessoa{
 private:
@@ -12,6 +13,7 @@ private:
   int idadeP;
   char nomeP[30];
   Universidade* uniP; // referencia a um objeto associado (Universidade no caso)
+  Dpto* dptoP; // referencia a um objeto associado (Dpto no caso)
 
 public:
   // Construtora com valor default

@@ -3,6 +3,7 @@
 
 #include "pessoa.h"
 #include "principal.h"
+#include "dpto.h"
 
 class Principal{
 private:
@@ -17,6 +18,9 @@ private:
     Universidade princeton; //Einstein - fisica
     Universidade cambridge; // Newton - mat
     
+    Dpto daeln;
+    Dpto fisica;
+    Dpto mat;
 public:
     // Construtora
     Principal();
