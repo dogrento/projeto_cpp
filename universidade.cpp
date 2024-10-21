@@ -1,7 +1,7 @@
 #include "universidade.h"
 
-Universidade::Universidade(const char nome[]){
-    setUni(nome);
+Universidade::Universidade(){
+    dpto = nullptr;
 }
 
 Universidade::~Universidade(){}
@@ -12,4 +12,9 @@ void Universidade::setUni(const char uniNome[]){
 
 char* Universidade::getUni(){
     return nome;
+}
+
+void Universidade::setDpto(Dpto *d){
+    // agregacao via ptr
+    dpto = d;
 }

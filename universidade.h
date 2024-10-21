@@ -12,13 +12,14 @@ private:
 
 public:
 // Construtora
-    Universidade(const char nome[] = "");
+    Universidade();
     ~Universidade();
 
     // metodo
     void setUni(const char uniNome[]);
     char* getUni();
 
+    void setDpto(Dpto *d);
 };
 
 #endif

@@ -9,11 +9,11 @@ class Dpto{
 
     public:
     // construtora
-    Dpto(const char dptoN[] = "");
     Dpto();
+    ~Dpto();
 
     //metodos
-    void setDpto(const char dptoN[] = "");
+    void setDpto(const char dptoN[]);
     char* getDpto();
 
     void informaDpto();

@@ -3,12 +3,11 @@
 using std::cout;
 using std::endl;
 
-Dpto::Dpto(const char dptoN[]){
-    strcpy(dptoName, dptoN);
+Dpto::Dpto(){
+    strcpy(dptoName, "");
 }
 
-Dpto::Dpto(){
-    setDpto();
+Dpto::~Dpto(){
 }
 
 void Dpto::setDpto(const char dptoN[]){
