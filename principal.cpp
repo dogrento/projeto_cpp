@@ -6,8 +6,18 @@ Principal::Principal(){
     fulano.init(24, 11, 1945, "fulano cicrano");
     Einstein.init(14, 3, 1879, "Albert Einstein");
     Newton.init(4, 1, 1643, "Isaac Newton");
+
+    utfpr.setUni("Universidade Tecnologica Federal do Parana");
+    princeton.setUni("Princeton");
+    cambridge.setUni("Cambridge");
+
+    fulano.setUniversidade(&utfpr);
+    Einstein.setUniversidade(&princeton);
+    Newton.setUniversidade(&cambridge);
     exec();
 }
+
+Principal::~Principal(){}
 
 void Principal::exec(){
     // Obter a data e hora atual
@@ -26,4 +36,8 @@ void Principal::exec(){
     fulano.calcIdade(diaAtual, mesAtual, anoAtual);
     Einstein.calcIdade(diaAtual, mesAtual, anoAtual);
     Newton.calcIdade(diaAtual, mesAtual, anoAtual);
+
+    fulano.informaInfo();
+    Einstein.informaInfo();
+    Newton.informaInfo();
 }

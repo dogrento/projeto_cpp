@@ -2,6 +2,7 @@
 #define PESSOA_H
 
 #include <string.h>
+#include "universidade.h"
 
 class Pessoa{
 private:
@@ -10,6 +11,7 @@ private:
   int anoP;
   int idadeP;
   char nomeP[30];
+  Universidade* uniP; // referencia a um objeto associado (Universidade no caso)
 
 public:
   // Construtora com valor default
@@ -23,6 +25,9 @@ public:
   void init(int dia, int mes, int ano, const char nome[] = "");
   void calcIdade(int diaAtual, int mesAtual, int anoAtual);
   int getIdade();
+  void setUniversidade(Universidade* uni);
+  void informaUni();
+  void informaInfo();
 };
 
 #endif

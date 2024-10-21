@@ -1,4 +1,5 @@
 #include "pessoa.h"
+#include "universidade.h"
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -32,11 +33,22 @@ void Pessoa::calcIdade(int diaAtual, int mesAtual, int anoAtual){
         idadeP = idadeP-1;
       }
     }
-
-  cout << nomeP << " tem " << idadeP << " anos." << endl;
 }
 
 // retorna idadeP do objeto.
 int Pessoa::getIdade(){
   return idadeP;
+}
+
+void Pessoa::setUniversidade(Universidade* uni){
+  uniP = uni;
+}
+
+void Pessoa::informaUni(){
+  cout << uniP << endl;
+}
+
+void Pessoa::informaInfo(){
+  cout << nomeP << ": tem/teria " << idadeP << " anos de idade." << endl;
+  cout << "Estuda/trabalha em: " << uniP->getUni() << endl; 
 }
