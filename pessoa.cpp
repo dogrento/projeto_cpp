@@ -12,6 +12,8 @@ Pessoa::Pessoa(){
   init(0,0,0);
 }
 
+Pessoa::~Pessoa(){}
+
 // metodo para inicializar o objeto.
 void Pessoa::init(int dia, int mes, int ano, const char nome[]){
   idadeP = 0;

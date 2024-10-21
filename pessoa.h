@@ -22,6 +22,7 @@ public:
   // Valores default sempre no .h e nao no .cpp
   Pessoa(int dia, int mes, int ano, const char nome[] = "");
   Pessoa(); // Toda classe deve ter construtora sem param.
+  ~Pessoa();
 
   // Metodos
   void init(int dia, int mes, int ano, const char nome[] = "");
