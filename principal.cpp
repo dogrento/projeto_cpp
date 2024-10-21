@@ -18,6 +18,10 @@ Principal::Principal(){
     fulano.setUniversidade(&utfpr);
     Einstein.setUniversidade(&princeton);
     Newton.setUniversidade(&cambridge);
+
+    fulano.setDpto(&daeln);
+    Einstein.setDpto(&fisica);
+    Newton.setDpto(&mat);
     exec();
 }
 

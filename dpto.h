@@ -1,4 +1,6 @@
-#pragma once
+// #pragma once
+#ifndef DPTO_H
+#define DPTO_H
 
 #include <string.h>
 
@@ -18,3 +20,5 @@ class Dpto{
 
     void informaDpto();
 };
+
+#endif

@@ -28,6 +28,7 @@ public:
   void calcIdade(int diaAtual, int mesAtual, int anoAtual);
   int getIdade();
   void setUniversidade(Universidade* uni);
+  void setDpto(Dpto* d);
   void informaUni();
   void informaInfo();
 };
