@@ -24,7 +24,7 @@ void Universidade::setDpto(Dpto *d, int index){
 void Universidade::informaDpto(){
     for(int i = 0; i < 50; i++){
         if(dpto[i] != nullptr){
-            cout << dpto[i] << endl;
+            cout << dpto[i]->getDpto() << endl;
         }
     }
 }

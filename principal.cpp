@@ -3,7 +3,9 @@
 #include <ctime>
 
 Principal::Principal(){
-    fulano.init(24, 11, 1945, "fulano cicrano");
+    fulano0.init(24, 11, 1945, "Fulano Zero");
+    fulano1.init(24, 11, 1946, "Fulano Um");
+    fulano2.init(24, 11, 1947, "Fulano Dois");
     Einstein.init(14, 3, 1879, "Albert Einstein");
     Newton.init(4, 1, 1643, "Isaac Newton");
 
@@ -12,14 +14,26 @@ Principal::Principal(){
     cambridge.setUni("Cambridge");
 
     daeln.setDpto("DAELN");
+    dpto1.setDpto("dpto1");
+    dpto2.setDpto("dpto2");
     fisica.setDpto("FISICA");
     mat.setDpto("MATEMATICA");
 
-    fulano.setUniversidade(&utfpr);
+    utfpr.setDpto(&daeln, 0);
+    utfpr.setDpto(&dpto1, 1);
+    utfpr.setDpto(&dpto2, 2);
+    princeton.setDpto(&fisica, 0);
+    cambridge.setDpto(&mat, 0);
+
+    fulano0.setUniversidade(&utfpr);
+    fulano1.setUniversidade(&utfpr);
+    fulano2.setUniversidade(&utfpr);
     Einstein.setUniversidade(&princeton);
     Newton.setUniversidade(&cambridge);
 
-    fulano.setDpto(&daeln);
+    fulano0.setDpto(&daeln);
+    fulano1.setDpto(&dpto1);
+    fulano2.setDpto(&dpto2);
     Einstein.setDpto(&fisica);
     Newton.setDpto(&mat);
     exec();
@@ -41,11 +55,28 @@ void Principal::exec(){
     int anoAtual = localTime->tm_year + 1900; // Ano é contado desde 1900
 
 
-    fulano.calcIdade(diaAtual, mesAtual, anoAtual);
+    fulano0.calcIdade(diaAtual, mesAtual, anoAtual);
+    fulano1.calcIdade(diaAtual, mesAtual, anoAtual);
+    fulano2.calcIdade(diaAtual, mesAtual, anoAtual);
     Einstein.calcIdade(diaAtual, mesAtual, anoAtual);
     Newton.calcIdade(diaAtual, mesAtual, anoAtual);
 
-    fulano.informaInfo();
+    fulano0.informaInfo();
+    printf("\n");
+    fulano1.informaInfo();
+    printf("\n");
+    fulano2.informaInfo();
+    printf("\n");
     Einstein.informaInfo();
+    printf("\n");
     Newton.informaInfo();
+    printf("\n");
+
+    cout << "Departamentos: " << endl;
+    utfpr.informaDpto();
+    printf("\n");
+    princeton.informaDpto();
+    printf("\n");
+    cambridge.informaDpto();
+    printf("\n");
 }

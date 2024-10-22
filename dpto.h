@@ -4,10 +4,12 @@
 
 #include <string.h>
 
+class Universidade; // evita include recursivo. 
 
 class Dpto{
     private:
     char dptoName[30];
+    Universidade *uni;
 
     public:
     // construtora
@@ -19,6 +21,7 @@ class Dpto{
     char* getDpto();
 
     void informaDpto();
+    void setUni(Universidade *u);
 };
 
 #endif

@@ -21,3 +21,7 @@ char* Dpto::getDpto(){
 void Dpto::informaDpto(){
     cout << "Departamento: " << dptoName << endl;
 }
+
+void Dpto::setUni(Universidade* u){
+    uni = u;
+}
