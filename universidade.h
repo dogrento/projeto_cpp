@@ -2,6 +2,8 @@
 #define UNIVERSIDADE_H
 
 #include <string.h>
+#include <iostream>
+using namespace std;
 
 #include "dpto.h"
 
@@ -20,6 +22,7 @@ public:
     char* getUni();
 
     void setDpto(Dpto *d, int index);
+    void informaDpto();
 };
 
 #endif

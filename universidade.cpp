@@ -20,3 +20,11 @@ void Universidade::setDpto(Dpto *d, int index){
     // agregacao via ptr
     dpto[index] = d;
 }
+
+void Universidade::informaDpto(){
+    for(int i = 0; i < 50; i++){
+        if(dpto[i] != nullptr){
+            cout << dpto[i] << endl;
+        }
+    }
+}
