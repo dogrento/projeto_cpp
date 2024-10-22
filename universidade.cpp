@@ -1,7 +1,9 @@
 #include "universidade.h"
 
 Universidade::Universidade(){
-    dpto = nullptr;
+    for(int i = 0; i < 50; i++){
+        dpto[i] = nullptr;
+    }
 }
 
 Universidade::~Universidade(){}
@@ -14,7 +16,7 @@ char* Universidade::getUni(){
     return nome;
 }
 
-void Universidade::setDpto(Dpto *d){
+void Universidade::setDpto(Dpto *d, int index){
     // agregacao via ptr
-    dpto = d;
+    dpto[index] = d;
 }
