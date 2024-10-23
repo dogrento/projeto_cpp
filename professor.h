@@ -1,14 +1,15 @@
 // Classe Professor herda de Pessoa
-#pragma onde
+#pragma once
 
 #include <string.h>
+#include <iostream>
+using namespace std;
 #include "universidade.h"
 #include "dpto.h"
 #include "pessoa.h"
 
-class Professor:public Pessoa{
-protected: // protected permite herança
-
+class Professor:public Pessoa{ // Professor herda de Pessoa
+private: 
   Universidade* uniP; // referencia a um objeto associado (Universidade no caso)
   Dpto* dptoP; // referencia a um objeto associado (Dpto no caso)
 
@@ -22,9 +23,11 @@ public:
   ~Professor();
 
   // Metodos
-  void init(int dia, int mes, int ano, const char nome[] = "");
+//   void init(int dia, int mes, int ano, const char nome[] = "");
   void setUniversidade(Universidade* uni);
+  Universidade* getUni();
   void setDpto(Dpto* d);
+  Dpto* getDpto();
   void informaUni();
   void informaInfo();
 };

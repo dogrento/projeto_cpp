@@ -6,7 +6,8 @@
 #include "dpto.h"
 
 class Pessoa{
-private:
+protected:// protected permite herança
+
   int diaP;
   int mesP;
   int anoP;
