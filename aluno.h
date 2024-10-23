@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string.h>
 #include <iostream>
 using namespace std;
 
@@ -10,9 +11,9 @@ using namespace std;
 class Aluno:public Pessoa{ // Aluno herda de Pessoa
 private:
   char ra[7];  
-protected:// protected permite herança
-  Universidade* uniP; // referencia a um objeto associado (Universidade no caso)
-  Dpto* dptoP; // referencia a um objeto associado (Dpto no caso)
+// protected:// protected permite herança
+//   Universidade* uniP; // referencia a um objeto associado (Universidade no caso)
+//   Dpto* dptoP; // referencia a um objeto associado (Dpto no caso)
 
 public:
   // Construtora com valor default
@@ -24,9 +25,10 @@ public:
   ~Aluno();
 
   // Metodos
-  void setUniversidade(Universidade* uni);
-  void setDpto(Dpto* d);
-  void informaUni();
-  void informaDpto();
-  void informaInfo();
+  void setRa(const char ra[]);
+  // void setUniversidade(Universidade* uni);
+  // void setDpto(Dpto* d);
+  // void informaUni();
+  // void informaDpto();
+  // void informaInfo();
 };
