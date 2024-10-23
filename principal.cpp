@@ -3,11 +3,14 @@
 #include <ctime>
 
 Principal::Principal(){
-    fulano0.init(24, 11, 1945, "Fulano Zero");
-    fulano1.init(24, 11, 1946, "Fulano Um");
-    fulano2.init(24, 11, 1947, "Fulano Dois");
+    professor0.init(24, 11, 1945, "Professor Zero");
+    professor1.init(24, 11, 1946, "Professor Um");
+    professor2.init(24, 11, 1947, "Professor Dois");
     Einstein.init(14, 3, 1879, "Albert Einstein");
     Newton.init(4, 1, 1643, "Isaac Newton");
+
+    aluno0.init(24, 11, 1950, "1234567");
+    aluno1.init(24, 11, 1960, "7654321");
 
     utfpr.setUni("Universidade Tecnologica Federal do Parana");
     princeton.setUni("Princeton");
@@ -25,15 +28,15 @@ Principal::Principal(){
     princeton.setDpto(&fisica, 0);
     cambridge.setDpto(&mat, 0);
 
-    fulano0.setUniversidade(&utfpr);
-    fulano1.setUniversidade(&utfpr);
-    fulano2.setUniversidade(&utfpr);
+    professor0.setUniversidade(&utfpr);
+    professor1.setUniversidade(&utfpr);
+    professor2.setUniversidade(&utfpr);
     Einstein.setUniversidade(&princeton);
     Newton.setUniversidade(&cambridge);
 
-    fulano0.setDpto(&daeln);
-    fulano1.setDpto(&dpto1);
-    fulano2.setDpto(&dpto2);
+    professor0.setDpto(&daeln);
+    professor1.setDpto(&dpto1);
+    professor2.setDpto(&dpto2);
     Einstein.setDpto(&fisica);
     Newton.setDpto(&mat);
     exec();
@@ -55,21 +58,26 @@ void Principal::exec(){
     int anoAtual = localTime->tm_year + 1900; // Ano é contado desde 1900
 
 
-    fulano0.calcIdade(diaAtual, mesAtual, anoAtual);
-    fulano1.calcIdade(diaAtual, mesAtual, anoAtual);
-    fulano2.calcIdade(diaAtual, mesAtual, anoAtual);
+    professor0.calcIdade(diaAtual, mesAtual, anoAtual);
+    professor1.calcIdade(diaAtual, mesAtual, anoAtual);
+    professor2.calcIdade(diaAtual, mesAtual, anoAtual);
     Einstein.calcIdade(diaAtual, mesAtual, anoAtual);
     Newton.calcIdade(diaAtual, mesAtual, anoAtual);
 
-    fulano0.informaInfo();
+    professor0.informaInfo();
     printf("\n");
-    fulano1.informaInfo();
+    professor1.informaInfo();
     printf("\n");
-    fulano2.informaInfo();
+    professor2.informaInfo();
     printf("\n");
     Einstein.informaInfo();
     printf("\n");
     Newton.informaInfo();
+    printf("\n");
+
+    aluno0.informaInfo();
+    printf("\n");
+    aluno1.informaInfo();
     printf("\n");
 
     cout << "Departamentos: " << endl;

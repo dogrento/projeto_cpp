@@ -5,6 +5,7 @@
 using namespace std;
 
 #include "professor.h"
+#include "aluno.h"
 #include "principal.h"
 #include "dpto.h"
 
@@ -13,7 +14,8 @@ private:
     // Os objetos Pessoa estao incluidos (ou agregados) ao obj principal.
     // Conceito de agregaçao forte
     // NOTA* A construtora sem param de cada obj é chamada.
-    Professor fulano0, fulano1, fulano2, Einstein, Newton;
+    Professor professor0, professor1, professor2, Einstein, Newton;
+    Aluno aluno0, aluno1;
 
     Universidade utfpr, princeton, cambridge;
     

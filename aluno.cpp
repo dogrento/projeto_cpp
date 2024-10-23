@@ -11,3 +11,11 @@ Aluno::~Aluno(){}
 void Aluno::setRa(const char r[]){
     strcpy(ra, r);
 }
+
+char* Aluno::getRa(){
+    return ra;
+}
+
+void Aluno::informaInfo(){
+    cout << "Aluno: " << this->nomeP << "RA: " << getRa() << endl;
+}
