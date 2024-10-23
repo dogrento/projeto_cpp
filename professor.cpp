@@ -30,7 +30,12 @@ void Professor::informaUni(){
     cout << "Universidade: " << uniP->getUni() << endl; 
 }
 
+void Professor::informaDpto(){
+    cout << "Departamento: " << dptoP->getDpto() << endl; 
+}
+
 void Professor::informaInfo(){
     cout << "Professor: " << this->nomeP << endl;
-    informaInfo();
+    informaUni();
+    informaDpto();
 }

@@ -4,6 +4,7 @@
 #include <string.h>
 #include <iostream>
 using namespace std;
+
 #include "universidade.h"
 #include "dpto.h"
 #include "pessoa.h"
@@ -29,5 +30,6 @@ public:
   void setDpto(Dpto* d);
   Dpto* getDpto();
   void informaUni();
+  void informaDpto();
   void informaInfo();
 };

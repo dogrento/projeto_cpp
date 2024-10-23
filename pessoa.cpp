@@ -42,21 +42,21 @@ int Pessoa::getIdade(){
   return idadeP;
 }
 
-void Pessoa::setUniversidade(Universidade* uni){
-  uniP = uni;
-}
+// void Pessoa::setUniversidade(Universidade* uni){
+//   uniP = uni;
+// }
 
-void Pessoa::setDpto(Dpto* d){
-  dptoP = d;
-}
+// void Pessoa::setDpto(Dpto* d){
+//   dptoP = d;
+// }
 
-void Pessoa::informaUni(){
-  cout << uniP << endl;
-}
+// void Pessoa::informaUni(){
+//   cout << uniP << endl;
+// }
 
-void Pessoa::informaInfo(){
-  cout << nomeP << ": tem/teria " << idadeP << " anos de idade." << endl;
-  cout << "Estuda/trabalha em: " << uniP->getUni() << endl; 
-  // cout << "Dpto: " << dptoP->getDpto() << endl; 
-  dptoP->informaDpto();
-}
+// void Pessoa::informaInfo(){
+//   cout << nomeP << ": tem/teria " << idadeP << " anos de idade." << endl;
+//   cout << "Estuda/trabalha em: " << uniP->getUni() << endl; 
+//   // cout << "Dpto: " << dptoP->getDpto() << endl; 
+//   dptoP->informaDpto();
+// }
