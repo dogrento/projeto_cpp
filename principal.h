@@ -29,6 +29,13 @@ public:
 
     // Metodos
     void exec();
+    void professorInit();
+    void alunoInit();
+    void universidadeInit();
+    void dptoInit();
+    void setUniDpto();
+    void setProfUni();
+    void setProfDpto();
 };
 
 #endif

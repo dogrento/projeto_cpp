@@ -20,7 +20,7 @@ public:
   // NOTA* nao é possivel definir valor default caso os parametros mais a direita nao estejam com valor default. 
   // Ou seja, colcar os paremetro com default value sempre a direita.
   // Valores default sempre no .h e nao no .cpp
-  Aluno(int dia, int mes, int ano, const char nome[] = "", const char ra[]="");
+  Aluno(int dia, int mes, int ano, const char nome[] = "");
   Aluno(); // Toda classe deve ter construtora sem param.
   ~Aluno();
 

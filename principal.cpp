@@ -3,42 +3,13 @@
 #include <ctime>
 
 Principal::Principal(){
-    professor0.init(24, 11, 1945, "Professor Zero");
-    professor1.init(24, 11, 1946, "Professor Um");
-    professor2.init(24, 11, 1947, "Professor Dois");
-    Einstein.init(14, 3, 1879, "Albert Einstein");
-    Newton.init(4, 1, 1643, "Isaac Newton");
-
-    aluno0.init(24, 11, 1950, "1234567");
-    aluno1.init(24, 11, 1960, "7654321");
-
-    utfpr.setUni("Universidade Tecnologica Federal do Parana");
-    princeton.setUni("Princeton");
-    cambridge.setUni("Cambridge");
-
-    daeln.setDpto("DAELN");
-    dpto1.setDpto("dpto1");
-    dpto2.setDpto("dpto2");
-    fisica.setDpto("FISICA");
-    mat.setDpto("MATEMATICA");
-
-    utfpr.setDpto(&daeln, 0);
-    utfpr.setDpto(&dpto1, 1);
-    utfpr.setDpto(&dpto2, 2);
-    princeton.setDpto(&fisica, 0);
-    cambridge.setDpto(&mat, 0);
-
-    professor0.setUniversidade(&utfpr);
-    professor1.setUniversidade(&utfpr);
-    professor2.setUniversidade(&utfpr);
-    Einstein.setUniversidade(&princeton);
-    Newton.setUniversidade(&cambridge);
-
-    professor0.setDpto(&daeln);
-    professor1.setDpto(&dpto1);
-    professor2.setDpto(&dpto2);
-    Einstein.setDpto(&fisica);
-    Newton.setDpto(&mat);
+    professorInit();
+    alunoInit();
+    universidadeInit();
+    dptoInit();
+    setUniDpto();
+    setProfUni();
+    setProfDpto();
     exec();
 }
 
@@ -87,4 +58,58 @@ void Principal::exec(){
     printf("\n");
     cambridge.informaDpto();
     printf("\n");
+}
+
+void Principal::professorInit(){
+    professor0.init(24, 11, 1945, "Professor Zero");
+    professor1.init(24, 11, 1946, "Professor Um");
+    professor2.init(24, 11, 1947, "Professor Dois");
+    Einstein.init(14, 3, 1879, "Albert Einstein");
+    Newton.init(4, 1, 1643, "Isaac Newton");
+}
+
+void Principal::alunoInit(){
+    aluno0.init(24, 11, 1950, "Aluno Zero");
+    aluno1.init(24, 11, 1960, "Aluno Um");
+
+    aluno0.setRa("1234567");
+    aluno0.setRa("7654321");
+}
+
+void Principal::universidadeInit(){
+    utfpr.setUni("Universidade Tecnologica Federal do Parana");
+    princeton.setUni("Princeton");
+    cambridge.setUni("Cambridge");
+}
+
+void Principal::dptoInit(){
+    daeln.setDpto("DAELN");
+    dpto1.setDpto("dpto1");
+    dpto2.setDpto("dpto2");
+    fisica.setDpto("FISICA");
+    mat.setDpto("MATEMATICA");
+}
+
+void Principal::setUniDpto(){
+    utfpr.setDpto(&daeln, 0);
+    utfpr.setDpto(&dpto1, 1);
+    utfpr.setDpto(&dpto2, 2);
+    princeton.setDpto(&fisica, 0);
+    cambridge.setDpto(&mat, 0);
+}
+
+void Principal::setProfUni(){
+    professor0.setUniversidade(&utfpr);
+    professor1.setUniversidade(&utfpr);
+    professor2.setUniversidade(&utfpr);
+    Einstein.setUniversidade(&princeton);
+    Newton.setUniversidade(&cambridge);
+}
+
+void Principal::setProfDpto(){
+    professor0.setDpto(&daeln);
+    professor1.setDpto(&dpto1);
+    professor2.setDpto(&dpto2);
+    Einstein.setDpto(&fisica);
+    Newton.setDpto(&mat);
 }

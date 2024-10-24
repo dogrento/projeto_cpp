@@ -1,8 +1,8 @@
 #include "aluno.h"
 
-Aluno::Aluno(int dia, int mes, int ano, const char nome[], const char r[]):
+Aluno::Aluno(int dia, int mes, int ano, const char nome[]):
 Pessoa(dia, mes, ano, nome){
-    setRa(r);
+    strcpy(ra, "");
 }
 
 Aluno::Aluno(){}
@@ -17,5 +17,5 @@ char* Aluno::getRa(){
 }
 
 void Aluno::informaInfo(){
-    cout << "Aluno: " << this->nomeP << "RA: " << getRa() << endl;
+    cout << "Aluno: " << this->nomeP << ", RA: " << getRa() << endl;
 }
