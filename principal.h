@@ -14,7 +14,7 @@ private:
     // Os objetos Pessoa estao incluidos (ou agregados) ao obj principal.
     // Conceito de agregaçao forte
     // NOTA* A construtora sem param de cada obj é chamada.
-    Professor prof0, prof1, prof2, Einstein, Newton;
+    Professor prof0, prof1, prof2, einstein, Newton;
     Aluno aluno0, aluno1;
 
     Universidade utfpr, princeton, cambridge;

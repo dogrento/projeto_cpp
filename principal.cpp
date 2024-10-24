@@ -32,7 +32,7 @@ void Principal::exec(){
     prof0.calcIdade(diaAtual, mesAtual, anoAtual);
     prof1.calcIdade(diaAtual, mesAtual, anoAtual);
     prof2.calcIdade(diaAtual, mesAtual, anoAtual);
-    Einstein.calcIdade(diaAtual, mesAtual, anoAtual);
+    einstein.calcIdade(diaAtual, mesAtual, anoAtual);
     Newton.calcIdade(diaAtual, mesAtual, anoAtual);
 
     prof0.informaInfo();
@@ -41,7 +41,7 @@ void Principal::exec(){
     printf("\n");
     prof2.informaInfo();
     printf("\n");
-    Einstein.informaInfo();
+    einstein.informaInfo();
     printf("\n");
     Newton.informaInfo();
     printf("\n");
@@ -64,7 +64,7 @@ void Principal::profInit(){
     prof0.init(24, 11, 1945, "Professor Zero");
     prof1.init(24, 11, 1946, "Professor Um");
     prof2.init(24, 11, 1947, "Professor Dois");
-    Einstein.init(14, 3, 1879, "Albert Einstein");
+    einstein.init(14, 3, 1879, "Albert einstein");
     Newton.init(4, 1, 1643, "Isaac Newton");
 }
 
@@ -102,7 +102,7 @@ void Principal::setProfUni(){
     prof0.setUniversidade(&utfpr);
     prof1.setUniversidade(&utfpr);
     prof2.setUniversidade(&utfpr);
-    Einstein.setUniversidade(&princeton);
+    einstein.setUniversidade(&princeton);
     Newton.setUniversidade(&cambridge);
 }
 
@@ -110,6 +110,6 @@ void Principal::setProfDpto(){
     prof0.setDpto(&daeln);
     prof1.setDpto(&dpto1);
     prof2.setDpto(&dpto2);
-    Einstein.setDpto(&fisica);
+    einstein.setDpto(&fisica);
     Newton.setDpto(&mat);
 }
