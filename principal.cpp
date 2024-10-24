@@ -52,11 +52,11 @@ void Principal::exec(){
     printf("\n");
 
     cout << "Departamentos: " << endl;
-    utfpr.informaDpto();
+    utfpr.informaDptoList();
     printf("\n");
-    princeton.informaDpto();
+    princeton.informaDptoList();
     printf("\n");
-    cambridge.informaDpto();
+    cambridge.informaDptoList();
     printf("\n");
 }
 
@@ -77,9 +77,9 @@ void Principal::alunoInit(){
 }
 
 void Principal::universidadeInit(){
-    utfpr.setUni("Universidade Tecnologica Federal do Parana");
-    princeton.setUni("Princeton");
-    cambridge.setUni("Cambridge");
+    utfpr.setName("Universidade Tecnologica Federal do Parana");
+    princeton.setName("Princeton");
+    cambridge.setName("Cambridge");
 }
 
 void Principal::dptoInit(){
@@ -91,11 +91,11 @@ void Principal::dptoInit(){
 }
 
 void Principal::setUniDpto(){
-    utfpr.setName(&daeln, 0);
-    utfpr.setName(&dpto1, 1);
-    utfpr.setName(&dpto2, 2);
-    princeton.setName(&fisica, 0);
-    cambridge.setName(&mat, 0);
+    utfpr.setDptoList(&daeln, 0);
+    utfpr.setDptoList(&dpto1, 1);
+    utfpr.setDptoList(&dpto2, 2);
+    princeton.setDptoList(&fisica, 0);
+    cambridge.setDptoList(&mat, 0);
 }
 
 void Principal::setProfUni(){

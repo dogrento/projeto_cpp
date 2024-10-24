@@ -9,8 +9,8 @@ using namespace std;
 
 class Universidade{
 private:
-    char nome[100];
-    Dpto *dpto[50];
+    char uniName[30];
+    Dpto *dptoP[50];
 
 public:
 // Construtora
@@ -18,11 +18,11 @@ public:
     ~Universidade();
 
     // metodo
-    void setUni(const char uniNome[]);
-    char* getUni();
+    void setName(const char uniN[]){strcpy(uniName, uniN);};
+    char* getName(){return uniName;};
 
-    void setName(Dpto *d, int index);
-    void informaDpto();
+    void setDptoList(Dpto *d, int index){dptoP[index] = d;};
+    void informaDptoList();
 };
 
 #endif

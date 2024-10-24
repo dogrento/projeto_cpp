@@ -15,6 +15,7 @@ private:
     // Conceito de agregaçao forte
     // NOTA* A construtora sem param de cada obj é chamada.
     Professor prof0, prof1, prof2, einstein, newton;
+    
     Aluno aluno0, aluno1;
 
     Universidade utfpr, princeton, cambridge;
