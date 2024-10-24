@@ -2,6 +2,7 @@
 #define PESSOA_H
 
 #include <string.h>
+using namespace std;
 #include "universidade.h"
 #include "dpto.h"
 
@@ -13,26 +14,29 @@ protected:// protected permite herança
   int anoP;
   int idadeP;
   char nomeP[30];
-  // Universidade* uniP; // referencia a um objeto associado (Universidade no caso)
-  // Dpto* dptoP; // referencia a um objeto associado (Dpto no caso)
+  int ID;
 
 public:
   // Construtora com valor default
   // NOTA* nao é possivel definir valor default caso os parametros mais a direita nao estejam com valor default. 
   // Ou seja, colcar os paremetro com default value sempre a direita.
   // Valores default sempre no .h e nao no .cpp
-  Pessoa(int dia, int mes, int ano, const char nome[] = "");
+  Pessoa(int dia, int mes, int ano, const char nome[] = "", int id = -1);
   Pessoa(); // Toda classe deve ter construtora sem param.
   ~Pessoa();
 
   // Metodos
-  void init(int dia, int mes, int ano, const char nome[] = "");
+  void init(int dia, int mes, int ano, const char nome[] = "", int id = -1);
   void calcIdade(int diaAtual, int mesAtual, int anoAtual);
-  int getIdade();
+  int getIdade(){return idadeP;};
+  void setName(const char n[]){strcpy(nomeP, n);};
+  char* getName(){return nomeP;};
+  void setID(int id){ID = id;};
+  int getID(){return ID;};
+  void informaInfo();
   // void setUniversidade(Universidade* uni);
   // void setDpto(Dpto* d);
   // void informaUni();
-  // void informaInfo();
 };
 
 #endif

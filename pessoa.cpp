@@ -5,8 +5,8 @@ using std::cout;
 using std::endl;
 
 // Construtora
-Pessoa::Pessoa(int dia, int mes, int ano, const char nome[]){ // C++ exige const char*. Razao: essa variavel é criada apenas durante a chamada da func 
-  init(dia, mes, ano, nome);
+Pessoa::Pessoa(int dia, int mes, int ano, const char nome[], int id){ // C++ exige const char*. Razao: essa variavel é criada apenas durante a chamada da func 
+  init(dia, mes, ano, nome, id);
 }
 Pessoa::Pessoa(){
   init(0,0,0);
@@ -15,12 +15,14 @@ Pessoa::Pessoa(){
 Pessoa::~Pessoa(){}
 
 // metodo para inicializar o objeto.
-void Pessoa::init(int dia, int mes, int ano, const char nome[]){
+void Pessoa::init(int dia, int mes, int ano, const char nome[], int id){
   idadeP = 0;
   diaP = dia;
   mesP = mes;
   anoP = ano;
-  strcpy(nomeP, nome); // jeito certo; jeito errado -> nomeP = nome. Razao: nesse caso, nomeP receberia o ponteiro da variavel temporaria nome. Ao sair da funcao nomeP seria indeterminado.
+  // strcpy(nomeP, nome); // jeito certo; jeito errado -> nomeP = nome. Razao: nesse caso, nomeP receberia o ponteiro da variavel temporaria nome. Ao sair da funcao nomeP seria indeterminado.
+  setName(nome);
+  setID(id);
 }
 
 // calcula e informa idade.
@@ -37,26 +39,8 @@ void Pessoa::calcIdade(int diaAtual, int mesAtual, int anoAtual){
     }
 }
 
-// retorna idadeP do objeto.
-int Pessoa::getIdade(){
-  return idadeP;
+void Pessoa::informaInfo(){
+  cout << "ID: " << getID() << endl;
+  cout << "Nome: " << getName() << endl;
+  cout << "Idade: " << getIdade() << endl;
 }
-
-// void Pessoa::setUniversidade(Universidade* uni){
-//   uniP = uni;
-// }
-
-// void Pessoa::setDpto(Dpto* d){
-//   dptoP = d;
-// }
-
-// void Pessoa::informaUni(){
-//   cout << uniP << endl;
-// }
-
-// void Pessoa::informaInfo(){
-//   cout << nomeP << ": tem/teria " << idadeP << " anos de idade." << endl;
-//   cout << "Estuda/trabalha em: " << uniP->getUni() << endl; 
-//   // cout << "Dpto: " << dptoP->getDpto() << endl; 
-//   dptoP->informaDpto();
-// }
