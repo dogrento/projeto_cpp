@@ -21,7 +21,7 @@ public:
     void setUni(const char uniNome[]);
     char* getUni();
 
-    void setDpto(Dpto *d, int index);
+    void setName(Dpto *d, int index);
     void informaDpto();
 };
 

@@ -35,7 +35,7 @@ public:
   int getID(){return ID;};
   void informaInfo();
   // void setUni(Universidade* uni);
-  // void setDpto(Dpto* d);
+  // void setName(Dpto* d);
   // void informaUni();
 };
 

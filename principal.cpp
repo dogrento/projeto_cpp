@@ -73,7 +73,7 @@ void Principal::alunoInit(){
     aluno1.init(24, 11, 1960, "Aluno Um");
 
     aluno0.setRa("1234567");
-    aluno0.setRa("7654321");
+    aluno1.setRa("7654321");
 }
 
 void Principal::universidadeInit(){
@@ -83,19 +83,19 @@ void Principal::universidadeInit(){
 }
 
 void Principal::dptoInit(){
-    daeln.setDpto("DAELN");
-    dpto1.setDpto("dpto1");
-    dpto2.setDpto("dpto2");
-    fisica.setDpto("FISICA");
-    mat.setDpto("MATEMATICA");
+    daeln.setName("DAELN");
+    dpto1.setName("dpto1");
+    dpto2.setName("dpto2");
+    fisica.setName("FISICA");
+    mat.setName("MATEMATICA");
 }
 
 void Principal::setUniDpto(){
-    utfpr.setDpto(&daeln, 0);
-    utfpr.setDpto(&dpto1, 1);
-    utfpr.setDpto(&dpto2, 2);
-    princeton.setDpto(&fisica, 0);
-    cambridge.setDpto(&mat, 0);
+    utfpr.setName(&daeln, 0);
+    utfpr.setName(&dpto1, 1);
+    utfpr.setName(&dpto2, 2);
+    princeton.setName(&fisica, 0);
+    cambridge.setName(&mat, 0);
 }
 
 void Principal::setProfUni(){
@@ -107,9 +107,9 @@ void Principal::setProfUni(){
 }
 
 void Principal::setProfDpto(){
-    prof0.setDpto(&daeln);
-    prof1.setDpto(&dpto1);
-    prof2.setDpto(&dpto2);
-    einstein.setDpto(&fisica);
-    newton.setDpto(&mat);
+    prof0.setName(&daeln);
+    prof1.setName(&dpto1);
+    prof2.setName(&dpto2);
+    einstein.setName(&fisica);
+    newton.setName(&mat);
 }

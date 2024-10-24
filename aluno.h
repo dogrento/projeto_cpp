@@ -29,7 +29,7 @@ public:
   char* getRa(){return RA;};
   void informaRA();
   // void setUni(Universidade* uni);
-  // void setDpto(Dpto* d);
+  // void setName(Dpto* d);
   // void informaUni();
   // void informaDpto();
   void informaInfo();

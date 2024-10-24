@@ -19,7 +19,11 @@ private:
 
     Universidade utfpr, princeton, cambridge;
     
-    Dpto daeln, dpto1, dpto2, fisica, mat;
+    Dpto daeln = Dpto(0), 
+         dpto1= Dpto(0), 
+         dpto2= Dpto(0), 
+         fisica= Dpto(0), 
+         mat= Dpto(0);
 public:
     // Construtora
     Principal();

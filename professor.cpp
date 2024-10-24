@@ -15,7 +15,7 @@ void Professor::informaUni(){
 }
 
 void Professor::informaDpto(){
-    cout << "   Departamento: " << dptoP->getDpto() << endl; 
+    cout << "   Departamento: " << dptoP->getName() << endl; 
 }
 
 void Professor::informaInfo(){
