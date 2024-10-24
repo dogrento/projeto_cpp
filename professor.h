@@ -19,16 +19,16 @@ public:
   // NOTA* nao é possivel definir valor default caso os parametros mais a direita nao estejam com valor default. 
   // Ou seja, colcar os paremetro com default value sempre a direita.
   // Valores default sempre no .h e nao no .cpp
-  Professor(int dia, int mes, int ano, const char nome[] = "");
+  Professor(int dia, int mes, int ano, const char nome[] = "", int id = -1);
   Professor(); // Toda classe deve ter construtora sem param.
   ~Professor();
 
   // Metodos
 //   void init(int dia, int mes, int ano, const char nome[] = "");
-  void setUniversidade(Universidade* uni);
-  Universidade* getUni();
-  void setDpto(Dpto* d);
-  Dpto* getDpto();
+  void setUni(Universidade* uni){uniP = uni;};
+  Universidade* getUni(){return uniP;};
+  void setDpto(Dpto* d){dptoP = d;};
+  Dpto* getDpto(){return dptoP;};
   void informaUni();
   void informaDpto();
   void informaInfo();

@@ -99,11 +99,11 @@ void Principal::setUniDpto(){
 }
 
 void Principal::setProfUni(){
-    prof0.setUniversidade(&utfpr);
-    prof1.setUniversidade(&utfpr);
-    prof2.setUniversidade(&utfpr);
-    einstein.setUniversidade(&princeton);
-    newton.setUniversidade(&cambridge);
+    prof0.setUni(&utfpr);
+    prof1.setUni(&utfpr);
+    prof2.setUni(&utfpr);
+    einstein.setUni(&princeton);
+    newton.setUni(&cambridge);
 }
 
 void Principal::setProfDpto(){

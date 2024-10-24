@@ -27,7 +27,7 @@ public:
   // Metodos
   void setRa(const char ra[]);
   char* getRa();
-  // void setUniversidade(Universidade* uni);
+  // void setUni(Universidade* uni);
   // void setDpto(Dpto* d);
   // void informaUni();
   // void informaDpto();
