@@ -11,11 +11,11 @@ Professor::Professor(){}
 Professor::~Professor(){}
 
 void Professor::informaUni(){
-    cout << "Universidade: " << uniP->getUni() << endl; 
+    cout << "   Universidade: " << uniP->getUni() << endl; 
 }
 
 void Professor::informaDpto(){
-    cout << "Departamento: " << dptoP->getDpto() << endl; 
+    cout << "   Departamento: " << dptoP->getDpto() << endl; 
 }
 
 void Professor::informaInfo(){
