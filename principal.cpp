@@ -3,7 +3,7 @@
 #include <ctime>
 
 Principal::Principal(){
-    professorInit();
+    profInit();
     alunoInit();
     universidadeInit();
     dptoInit();
@@ -29,17 +29,17 @@ void Principal::exec(){
     int anoAtual = localTime->tm_year + 1900; // Ano é contado desde 1900
 
 
-    professor0.calcIdade(diaAtual, mesAtual, anoAtual);
-    professor1.calcIdade(diaAtual, mesAtual, anoAtual);
-    professor2.calcIdade(diaAtual, mesAtual, anoAtual);
+    prof0.calcIdade(diaAtual, mesAtual, anoAtual);
+    prof1.calcIdade(diaAtual, mesAtual, anoAtual);
+    prof2.calcIdade(diaAtual, mesAtual, anoAtual);
     Einstein.calcIdade(diaAtual, mesAtual, anoAtual);
     Newton.calcIdade(diaAtual, mesAtual, anoAtual);
 
-    professor0.informaInfo();
+    prof0.informaInfo();
     printf("\n");
-    professor1.informaInfo();
+    prof1.informaInfo();
     printf("\n");
-    professor2.informaInfo();
+    prof2.informaInfo();
     printf("\n");
     Einstein.informaInfo();
     printf("\n");
@@ -60,10 +60,10 @@ void Principal::exec(){
     printf("\n");
 }
 
-void Principal::professorInit(){
-    professor0.init(24, 11, 1945, "Professor Zero");
-    professor1.init(24, 11, 1946, "Professor Um");
-    professor2.init(24, 11, 1947, "Professor Dois");
+void Principal::profInit(){
+    prof0.init(24, 11, 1945, "Professor Zero");
+    prof1.init(24, 11, 1946, "Professor Um");
+    prof2.init(24, 11, 1947, "Professor Dois");
     Einstein.init(14, 3, 1879, "Albert Einstein");
     Newton.init(4, 1, 1643, "Isaac Newton");
 }
@@ -99,17 +99,17 @@ void Principal::setUniDpto(){
 }
 
 void Principal::setProfUni(){
-    professor0.setUniversidade(&utfpr);
-    professor1.setUniversidade(&utfpr);
-    professor2.setUniversidade(&utfpr);
+    prof0.setUniversidade(&utfpr);
+    prof1.setUniversidade(&utfpr);
+    prof2.setUniversidade(&utfpr);
     Einstein.setUniversidade(&princeton);
     Newton.setUniversidade(&cambridge);
 }
 
 void Principal::setProfDpto(){
-    professor0.setDpto(&daeln);
-    professor1.setDpto(&dpto1);
-    professor2.setDpto(&dpto2);
+    prof0.setDpto(&daeln);
+    prof1.setDpto(&dpto1);
+    prof2.setDpto(&dpto2);
     Einstein.setDpto(&fisica);
     Newton.setDpto(&mat);
 }
