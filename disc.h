@@ -25,7 +25,11 @@ public:
     void setID(int id)     {ID = id;};
     int getID()            {return ID;};
     void setName(const char n[]) {strcpy(name, n);};
-    char* getName()        {return this->name;};
+    char* getName()        {return name;};
     void setDpto(Dpto* d);
     Dpto* getDpto()        {return pDptoAssociado;};
+
+    void informaDpto();
+    void informaAC();
+    void informaInfo();
 };

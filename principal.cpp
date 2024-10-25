@@ -7,9 +7,12 @@ Principal::Principal(){
     alunoInit();
     universidadeInit();
     dptoInit();
+    discInit();
+
     setUniDpto();
     setProfUni();
     setProfDpto();
+    setDptoDisc();
     exec();
 }
 
@@ -58,9 +61,17 @@ void Principal::exec(){
     printf("\n");
     cambridge.informaDptoList();
     printf("\n");
+
+    cout << "listando baulho" << endl;
+    daeln.listDisc();
+    dpto1.listDisc();
+    dpto2.listDisc();
+    fisica.listDisc();
+    mat.listDisc();
 }
 
 void Principal::profInit(){
+    cout << "Inicializando Objetos: Professor"<< endl;
     prof0.init(24, 11, 1945, "Professor Zero");
     prof1.init(24, 11, 1946, "Professor Um");
     prof2.init(24, 11, 1947, "Professor Dois");
@@ -69,6 +80,7 @@ void Principal::profInit(){
 }
 
 void Principal::alunoInit(){
+    cout << "Inicializando Objetos: Aluno"<< endl;
     aluno0.init(24, 11, 1950, "Aluno Zero");
     aluno1.init(24, 11, 1960, "Aluno Um");
 
@@ -77,12 +89,14 @@ void Principal::alunoInit(){
 }
 
 void Principal::universidadeInit(){
+    cout << "Inicializando Objetos: Universidade"<< endl;
     utfpr.setName("Universidade Tecnologica Federal do Parana");
     princeton.setName("Princeton");
     cambridge.setName("Cambridge");
 }
 
 void Principal::dptoInit(){
+    cout << "Inicializando Objetos: Dpto"<< endl;
     daeln.setName("DAELN");
     dpto1.setName("dpto1");
     dpto2.setName("dpto2");
@@ -91,6 +105,7 @@ void Principal::dptoInit(){
 }
 
 void Principal::discInit(){
+    cout << "Inicializando Objetos: Disc"<< endl;
     mat1.setName("Matematica_generica1");
     mat2.setName("Matematica_generica2");
     fisc1.setName("Fisica_generica1");
@@ -100,6 +115,7 @@ void Principal::discInit(){
 }
 
 void Principal::setUniDpto(){
+    cout << "Associando Dpto a Universidades."<< endl;
     utfpr.setDptoList(&daeln, 0);
     utfpr.setDptoList(&dpto1, 1);
     utfpr.setDptoList(&dpto2, 2);
@@ -108,6 +124,7 @@ void Principal::setUniDpto(){
 }
 
 void Principal::setProfUni(){
+    cout << "Asssociando Professores a Universidades."<< endl;
     prof0.setUni(&utfpr);
     prof1.setUni(&utfpr);
     prof2.setUni(&utfpr);
@@ -116,6 +133,7 @@ void Principal::setProfUni(){
 }
 
 void Principal::setProfDpto(){
+    cout << "Associando departamento a Professor"<< endl;
     prof0.setName(&daeln);
     prof1.setName(&dpto1);
     prof2.setName(&dpto2);
@@ -124,6 +142,7 @@ void Principal::setProfDpto(){
 }
 
 void Principal::setDptoDisc(){
+    cout << "Adicioanndo Disciplinas a Departamentos." << endl;
     mat1.setDpto(&mat);
     mat2.setDpto(&daeln);
     fisc1.setDpto(&fisica);

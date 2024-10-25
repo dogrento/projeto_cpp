@@ -33,8 +33,8 @@ void Dpto::listDisc(){
     pAux = pDiscPrim;
 
     while(pAux != nullptr){
-        cout << "Disciplina " << pAux->getName() <<
-        "pertence ao Dpto " << getName() << endl;
+        cout << "Departamento:  " << getName() <<
+        "\n    " << pAux->getName() << endl;
         
         pAux = pAux->pNext;
     }

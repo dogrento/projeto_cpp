@@ -11,3 +11,16 @@ void Disc::setDpto(Dpto* d){
     };
 
 Disc::~Disc(){};
+
+void Disc::informaDpto(){
+    cout << "Disciplina pertence ao dpto: " << endl;
+    getDpto()->informaDpto();
+}
+
+void Disc::informaAC(){
+    cout << areaConhecimento << endl;
+}
+
+void Disc::informaInfo(){
+    informaDpto();
+}
