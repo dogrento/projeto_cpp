@@ -106,12 +106,14 @@ void Principal::dptoInit(){
 
 void Principal::discInit(){
     cout << "Inicializando Objetos: Disc"<< endl;
-    mat1.setName("Matematica_generica1");
-    mat2.setName("Matematica_generica2");
-    fisc1.setName("Fisica_generica1");
-    fisc2.setName("Fisica_generica2");
-    comp1.setName("Comp_Generica1");
-    comp2.setName("Comp_Generica2");
+    daelDisc0.setName("Disc0_Gen_daeln0"); 
+    daelDisc1.setName("Disc1_Gen_daeln1"); 
+    dpto1Disc0.setName("Disc0_Gen_dpto1");
+    dpto1Disc1.setName("Disc1_Gen_dpto1");
+    dpto2Disc0.setName("Disc0_Gen_dpto2");
+    dpto2Disc1.setName("Disc1_Gen_dpto2");
+    fisDisc.setName("Fisica_Gen_dptoFisica");
+    matDisc.setName("Matematica_Gen_dptoMatematica");
 }
 
 void Principal::setUniDpto(){
@@ -143,10 +145,15 @@ void Principal::setProfDpto(){
 
 void Principal::setDptoDisc(){
     cout << "Adicioanndo Disciplinas a Departamentos." << endl;
-    mat1.setDpto(&mat);
-    mat2.setDpto(&daeln);
-    fisc1.setDpto(&fisica);
-    fisc2.setDpto(&fisica);
-    comp1.setDpto(&daeln);
-    comp2.setDpto(&daeln);
+    daelDisc0.setDpto(&daeln);
+    daelDisc1.setDpto(&daeln);
+
+    dpto1Disc0.setDpto(&dpto1);
+    dpto1Disc1.setDpto(&dpto1);
+
+    dpto2Disc0.setDpto(&dpto2);
+    dpto2Disc1.setDpto(&dpto2);
+
+    fisDisc.setDpto(&fisica);
+    matDisc.setDpto(&mat);
 }

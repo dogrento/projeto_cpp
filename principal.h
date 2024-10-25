@@ -21,14 +21,12 @@ private:
 
     Universidade utfpr, princeton, cambridge;
     
-    Disc mat1, mat2, fisc1, fisc2, comp1, comp2;
+    Dpto daeln, dpto1, dpto2, fisica, mat;
 
-    Dpto daeln, 
-         dpto1, 
-         dpto2, 
-         fisica, 
-         mat;
-
+    Disc daelDisc0, daelDisc1,
+        dpto1Disc0, dpto1Disc1, 
+        dpto2Disc0, dpto2Disc1,
+        fisDisc, matDisc;
     
 
 public:
