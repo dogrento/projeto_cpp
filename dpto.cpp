@@ -8,12 +8,6 @@ Dpto::Dpto(){
     pDiscAtual = nullptr;
 }
 
-// Dpto::Dpto(int id){
-//     setID(id);
-//     setName("");
-//     pDiscPrim = nullptr;
-//     pDiscAtual = nullptr;
-// }
 
 Dpto::~Dpto(){
     pDiscPrim = nullptr;

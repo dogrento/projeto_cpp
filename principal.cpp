@@ -90,6 +90,15 @@ void Principal::dptoInit(){
     mat.setName("MATEMATICA");
 }
 
+void Principal::discInit(){
+    mat1.setName("Matematica_generica1");
+    mat2.setName("Matematica_generica2");
+    fisc1.setName("Fisica_generica1");
+    fisc2.setName("Fisica_generica2");
+    comp1.setName("Comp_Generica1");
+    comp2.setName("Comp_Generica2");
+}
+
 void Principal::setUniDpto(){
     utfpr.setDptoList(&daeln, 0);
     utfpr.setDptoList(&dpto1, 1);
@@ -112,4 +121,13 @@ void Principal::setProfDpto(){
     prof2.setName(&dpto2);
     einstein.setName(&fisica);
     newton.setName(&mat);
+}
+
+void Principal::setDptoDisc(){
+    mat1.setDpto(&mat);
+    mat2.setDpto(&daeln);
+    fisc1.setDpto(&fisica);
+    fisc2.setDpto(&fisica);
+    comp1.setDpto(&daeln);
+    comp2.setDpto(&daeln);
 }

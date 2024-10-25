@@ -24,8 +24,8 @@ public:
     // metodos
     void setID(int id)     {ID = id;};
     int getID()            {return ID;};
-    void setName(char n[]) {strcpy(name, n);};
+    void setName(const char n[]) {strcpy(name, n);};
     char* getName()        {return this->name;};
-    void setDpto(Dpto* d)  {pDptoAssociado = d;};
+    void setDpto(Dpto* d);
     Dpto* getDpto()        {return pDptoAssociado;};
 };

@@ -8,6 +8,7 @@ using namespace std;
 #include "aluno.h"
 #include "principal.h"
 #include "dpto.h"
+#include "disc.h"
 
 class Principal{
 private:
@@ -20,16 +21,16 @@ private:
 
     Universidade utfpr, princeton, cambridge;
     
-    Dpto daeln , 
+    Disc mat1, mat2, fisc1, fisc2, comp1, comp2;
+
+    Dpto daeln, 
          dpto1, 
          dpto2, 
          fisica, 
          mat;
-    // Dpto daeln = Dpto(0), 
-    //      dpto1= Dpto(0), 
-    //      dpto2= Dpto(0), 
-    //      fisica= Dpto(0), 
-    //      mat= Dpto(0);
+
+    
+
 public:
     // Construtora
     Principal();
@@ -39,13 +40,17 @@ public:
 
     // Metodos
     void exec();
+
     void profInit();
     void alunoInit();
     void universidadeInit();
     void dptoInit();
+    void discInit();
+
     void setUniDpto();
     void setProfUni();
     void setProfDpto();
+    void setDptoDisc();
 };
 
 #endif
