@@ -6,6 +6,9 @@ Disc::Disc(int id, int n, const char ac[]){
 };
 
 void Disc::setDpto(Dpto* d){
+    cout << "setDpto()-> Associando " <<
+     d->getName() << " a " << this->getName() << endl;
+     
     pDptoAssociado = d;
     d->insertDisc(this); // insira *este obj* na lista de departamento associado
     };

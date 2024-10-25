@@ -4,6 +4,8 @@
 
 #include <string.h>
 #include <iostream>
+#include <list>
+
 using namespace std;
 
 class Universidade; // evita include recursivo. 
@@ -14,9 +16,9 @@ class Dpto{
     int ID;
     char dptoName[100];
     Universidade *uniP; // Associacao com uma Universidade
-    Disc *pDiscPrim; // Associacao com varias Disc
-    Disc *pDiscAtual; // Associacao com varias Disc
-
+    // Disc *pDiscPrim; // Associacao com varias Disc
+    // Disc *pDiscAtual; // Associacao com varias Disc
+    list<Disc*>discList;
 
     public:
     // construtora
