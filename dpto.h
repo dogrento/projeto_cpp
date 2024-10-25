@@ -21,7 +21,7 @@ class Dpto{
     public:
     // construtora
     Dpto();
-    Dpto(int id = -1);
+    // Dpto(int id = -1);
     ~Dpto();
 
     //metodos
