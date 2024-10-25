@@ -27,8 +27,8 @@ public:
 //   void init(int dia, int mes, int ano, const char nome[] = "");
   void setUni(Universidade* uni){uniP = uni;};
   Universidade* getUni(){return uniP;};
-  void setName(Dpto* d){dptoP = d;};
-  Dpto* getName(){return dptoP;};
+  void setDpto(Dpto* d){dptoP = d;};
+  Dpto* getDpto(){return dptoP;};
   void informaUni();
   void informaDpto();
   void informaInfo();

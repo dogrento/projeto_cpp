@@ -134,11 +134,11 @@ void Principal::setProfUni(){
 
 void Principal::setProfDpto(){
     cout << "Associando departamento a Professor"<< endl;
-    prof0.setName(&daeln);
-    prof1.setName(&dpto1);
-    prof2.setName(&dpto2);
-    einstein.setName(&fisica);
-    newton.setName(&mat);
+    prof0.setDpto(&daeln);
+    prof1.setDpto(&dpto1);
+    prof2.setDpto(&dpto2);
+    einstein.setDpto(&fisica);
+    newton.setDpto(&mat);
 }
 
 void Principal::setDptoDisc(){
