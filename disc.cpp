@@ -15,6 +15,13 @@ void Disc::setDpto(Dpto* d){
 
 Disc::~Disc(){};
 
+void Disc::listAlunos(){
+    cout << "Alunos matriculados: " << endl;
+    for(const auto& a : alunoList){
+        cout << "   " << a->getName() << endl;
+    }
+}
+
 void Disc::informaDpto(){
     cout << "Disciplina pertence ao dpto: " << endl;
     getDpto()->informaDpto();

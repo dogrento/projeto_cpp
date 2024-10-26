@@ -21,28 +21,13 @@ void Dpto::informaDpto(){
 void Dpto::insertDisc(Disc* pD){
     cout << "Inserindo " <<
     pD->getName() << " a lista de " << this->getName()<<endl;
-    // if(pDiscPrim == nullptr){
-    //     cout << "lista vazia..." << endl;
-    //     pDiscPrim = pD;
-    //     pDiscAtual = pD;
-    // }else{
-    //     pDiscAtual->pNext = pD;
-    //     pDiscAtual = pD;
-    // }
     discList.push_back(pD);
 }
 
 void Dpto::listDisc(){
-    // Disc* pAux;
-    // pAux = pDiscPrim;
-
     cout << "Departamento:  " << getName() << endl;
-    // while(pAux != nullptr){
-    //     cout << "\n    " << pAux->getName() << endl;
-        
-    //     pAux = pAux->pNext;
-    // }
-    for(const auto& disc : discList){
+
+    for(const auto& disc : discList){ // const indica que var nao sera alterada na iteracao, auto tipagem automatica cpp11 &end elemento e colecao
         cout << "\n    " << disc->getName() << endl;
     }
 }
