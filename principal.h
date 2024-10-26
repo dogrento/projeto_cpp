@@ -45,10 +45,11 @@ public:
     void dptoInit();
     void discInit();
 
-    void setUniDpto();
-    void setProfUni();
-    void setProfDpto();
-    void setDptoDisc();
+    void setUniDpto(); // associa dpto a universidade
+    void setProfUni(); // associa professor a universidade
+    void setProfDpto(); // add professor a dpto
+    void setDptoDisc(); // add disciplina ao dpto
+    void setAlunoDisc(); // matricula aluno a disciplina
 };
 
 #endif

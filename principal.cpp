@@ -13,6 +13,7 @@ Principal::Principal(){
     setProfUni();
     setProfDpto();
     setDptoDisc();
+    setAlunoDisc();
     exec();
 }
 
@@ -62,12 +63,16 @@ void Principal::exec(){
     cambridge.informaDptoList();
     printf("\n");
 
-    cout << "listando baulho" << endl;
+    cout << "Listando Disciplinas dos Departamentos: " << endl;
     daeln.listDisc();
     dpto1.listDisc();
     dpto2.listDisc();
     fisica.listDisc();
     mat.listDisc();
+
+    cout << "Listando alunos matriculados de disciplinas:" << endl;
+    daelDisc0.listAlunos();
+    daelDisc1.listAlunos();
 }
 
 void Principal::profInit(){
@@ -156,4 +161,9 @@ void Principal::setDptoDisc(){
 
     fisDisc.setDpto(&fisica);
     matDisc.setDpto(&mat);
+}
+
+void Principal::setAlunoDisc(){
+    daelDisc0.insertAluno(&aluno0);
+    daelDisc0.insertAluno(&aluno1);
 }
