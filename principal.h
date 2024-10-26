@@ -37,6 +37,8 @@ public:
     ~Principal();
 
     // Metodos
+    void menu();
+
     void exec();
 
     void profInit();

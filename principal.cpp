@@ -3,6 +3,8 @@
 #include <ctime>
 
 Principal::Principal(){
+
+    menu();
     profInit();
     alunoInit();
     universidadeInit();
@@ -18,6 +20,25 @@ Principal::Principal(){
 }
 
 Principal::~Principal(){}
+
+void Principal::menu(){
+    int opt = -1;
+    system("clear");
+    cout << " opt 1" << endl;
+    cout << " opt 2" << endl;
+    cout << " opt 3" << endl;
+    cout << " opt 4" << endl;
+    cout << " opt 5" << endl;
+    cin >> opt;
+
+    switch(opt){
+        case 1: { cout << "opt 1" << endl;}
+        case 2: { cout << "opt 2" << endl;}
+        case 3: { cout << "opt 3" << endl;}
+        case 4: { cout << "opt 4" << endl;}
+        case 5: { cout << "opt 5" << endl;}
+    }
+}
 
 void Principal::exec(){
     // Obter a data e hora atual
