@@ -17,8 +17,12 @@ Disc::~Disc(){};
 
 void Disc::listAlunos(){
     cout << "Alunos matriculados: " << endl;
-    for(const auto& a : alunoList){
-        cout << "   " << a->getName() << endl;
+    if(!alunoList.empty()){
+        for(const auto& a : alunoList){
+            cout << "   " << a->getName() << endl;
+        }
+    }else{
+        cout << "Nenhum aluno matriculado." << endl;
     }
 }
 
