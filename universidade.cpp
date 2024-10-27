@@ -1,6 +1,7 @@
 #include "universidade.h"
 
 Universidade::Universidade(){
+    setName("");
     for(int i = 0; i < 50; i++){
         dptoP[i] = nullptr;
     }

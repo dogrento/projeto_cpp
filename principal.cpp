@@ -24,18 +24,19 @@ Principal::~Principal(){}
 void Principal::menu(){
     int opt = -1;
 
-    while(opt != 3){
+    while(opt != 4){
         system("clear");
         cout << " Selecione uma Opção: " << endl;
-        cout << "   1 - Cadastrar" << endl;
-        cout << "   2 - seila" << endl;
-        cout << "   3 - Sair" << endl;
+        cout << "   1 - Universidade" << endl;
+        cout << "   2 - Professor" << endl;
+        cout << "   3 - Aluno" << endl;
+        cout << "   4 - Sair" << endl;
         cout << "Input -> ";
         cin >> opt;
 
         switch(opt){
             case 1: { cout << "opt 1" << endl;
-                menuCad();
+                menuUni();
             }
                 break;
             case 2: { cout << "opt 2" << endl;}
@@ -50,14 +51,43 @@ void Principal::menu(){
     }
 }
 
-void Principal::menuCad(){
+void Principal::menuUni(){
     int opt = -1;
 
     while(opt != 3){
         system("clear");
-        cout << " Menu Cadastrar: " << endl;
+        cout << " Menu Universidade: " << endl;
         cout << "   1 - Cadastrar Universidade." << endl;
-        cout << "   2 - Casdastrar Aluno." << endl;
+        cout << "   2 - Selecionar Universidades cadastradas." << endl;
+        cout << "   2 - Buscar Universidades cadastradas." << endl;
+        cout << "   3 - Voltar" << endl;
+        cout << "Input -> ";
+        cin >> opt;
+
+        switch(opt){
+            case 1: { cout << "opt 1" << endl;}
+                break;
+            case 2: { menuSelectUni();}
+                break;
+            case 3: { cout << "opt 3" << endl;}
+                break;
+            default:{
+                cout << "opçao invalida." << endl;
+                getchar();
+            }
+        }
+    }
+}
+
+void Principal::menuSelectUni(){
+    int opt = -1;
+
+    while(opt != 3){
+        system("clear");
+        cout << " Menu Universidade: " << endl;
+        cout << "   1 - " << utfpr.getName() << endl;
+        cout << "   2 - " << princeton.getName() << endl;
+        cout << "   2 - " << cambridge.getName() << endl;
         cout << "   3 - Voltar" << endl;
         cout << "Input -> ";
         cin >> opt;
