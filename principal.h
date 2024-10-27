@@ -38,6 +38,7 @@ public:
 
     // Metodos
     void menu();
+    void menuCad();
 
     void exec();
 

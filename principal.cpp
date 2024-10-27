@@ -23,20 +23,57 @@ Principal::~Principal(){}
 
 void Principal::menu(){
     int opt = -1;
-    system("clear");
-    cout << " opt 1" << endl;
-    cout << " opt 2" << endl;
-    cout << " opt 3" << endl;
-    cout << " opt 4" << endl;
-    cout << " opt 5" << endl;
-    cin >> opt;
 
-    switch(opt){
-        case 1: { cout << "opt 1" << endl;}
-        case 2: { cout << "opt 2" << endl;}
-        case 3: { cout << "opt 3" << endl;}
-        case 4: { cout << "opt 4" << endl;}
-        case 5: { cout << "opt 5" << endl;}
+    while(opt != 3){
+        system("clear");
+        cout << " Selecione uma Opção: " << endl;
+        cout << "   1 - Cadastrar" << endl;
+        cout << "   2 - seila" << endl;
+        cout << "   3 - Sair" << endl;
+        cout << "Input -> ";
+        cin >> opt;
+
+        switch(opt){
+            case 1: { cout << "opt 1" << endl;
+                menuCad();
+            }
+                break;
+            case 2: { cout << "opt 2" << endl;}
+                break;
+            case 3: { cout << "opt 3" << endl;}
+                break;
+            default:{
+                cout << "opçao invalida." << endl;
+                getchar();
+            }
+        }
+    }
+}
+
+void Principal::menuCad(){
+    int opt = -1;
+
+    while(opt != 3){
+        system("clear");
+        cout << " Menu Cadastrar: " << endl;
+        cout << "   1 - Cadastrar Universidade." << endl;
+        cout << "   2 - Casdastrar Aluno." << endl;
+        cout << "   3 - Voltar" << endl;
+        cout << "Input -> ";
+        cin >> opt;
+
+        switch(opt){
+            case 1: { cout << "opt 1" << endl;}
+                break;
+            case 2: { cout << "opt 2" << endl;}
+                break;
+            case 3: { cout << "opt 3" << endl;}
+                break;
+            default:{
+                cout << "opçao invalida." << endl;
+                getchar();
+            }
+        }
     }
 }
 
