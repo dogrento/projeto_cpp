@@ -1,6 +1,7 @@
 #ifndef PRINCIPAL_H
 #define PRINCIPAL_H
 
+#include <vector>
 #include <iostream>
 using namespace std;
 
@@ -27,6 +28,8 @@ private:
         dpto1Disc0, dpto1Disc1, 
         dpto2Disc0, dpto2Disc1,
         fisDisc, matDisc;
+
+    vector<Universidade*> uniVector;
     
 
 public:
@@ -42,6 +45,8 @@ public:
 
     void menuSelectUni();
 
+    void cadUni();
+    
     void exec();
 
     void profInit();
@@ -50,11 +55,14 @@ public:
     void dptoInit();
     void discInit();
 
+
     void setUniDpto(); // associa dpto a universidade
     void setProfUni(); // associa professor a universidade
     void setProfDpto(); // add professor a dpto
     void setDptoDisc(); // add disciplina ao dpto
     void setAlunoDisc(); // matricula aluno a disciplina
+
+    void listUniCad();
 };
 
 #endif

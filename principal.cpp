@@ -32,7 +32,16 @@ void Principal::menu(){
         cout << "   3 - Aluno" << endl;
         cout << "   4 - Sair" << endl;
         cout << "Input -> ";
-        cin >> opt;
+        // cin >> opt;
+
+         // Leitura segura para evitar erros com cin
+        if (!(cin >> opt)) {
+            cin.clear();  // Limpa o estado de erro
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o resto da linha
+            cout << "Entrada inválida. Pressione Enter para continuar...";
+            cin.get();  // Pausa esperando o Enter
+            continue;  // Volta ao início do loop
+        }
 
         switch(opt){
             case 1: { cout << "opt 1" << endl;
@@ -44,8 +53,10 @@ void Principal::menu(){
             case 3: { cout << "opt 3" << endl;}
                 break;
             default:{
-                cout << "opçao invalida." << endl;
-                getchar();
+                cout << "Opção inválida. Pressione Enter para continuar...";
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+                cin.get();  // Espera o Enter
+
             }
         }
     }
@@ -54,20 +65,24 @@ void Principal::menu(){
 void Principal::menuUni(){
     int opt = -1;
 
-    while(opt != 3){
         system("clear");
+    while(opt != 3){
         cout << " Menu Universidade: " << endl;
         cout << "   1 - Cadastrar Universidade." << endl;
         cout << "   2 - Selecionar Universidades cadastradas." << endl;
-        cout << "   2 - Buscar Universidades cadastradas." << endl;
+        // cout << "   2 - Buscar Universidades cadastradas." << endl;
         cout << "   3 - Voltar" << endl;
         cout << "Input -> ";
         cin >> opt;
+        cout << opt<< endl;
 
         switch(opt){
-            case 1: { cout << "opt 1" << endl;}
+            case 1: {
+                cadUni();
+            }
                 break;
-            case 2: { menuSelectUni();}
+            case 2: { listUniCad();
+            }
                 break;
             case 3: { cout << "opt 3" << endl;}
                 break;
@@ -83,19 +98,25 @@ void Principal::menuSelectUni(){
     int opt = -1;
 
     while(opt != 3){
-        system("clear");
+    system("clear");
         cout << " Menu Universidade: " << endl;
-        cout << "   1 - " << utfpr.getName() << endl;
-        cout << "   2 - " << princeton.getName() << endl;
-        cout << "   2 - " << cambridge.getName() << endl;
+        cout << "   1 - Cadastrar Universidades cadastradas." << endl;
+        cout << "   2 - Listar Universidades cadastradas." << endl;
+        // cout << "   1 - " << utfpr.getName() << endl;
+        // cout << "   2 - " << princeton.getName() << endl;
+        // cout << "   2 - " << cambridge.getName() << endl;
         cout << "   3 - Voltar" << endl;
         cout << "Input -> ";
         cin >> opt;
 
         switch(opt){
-            case 1: { cout << "opt 1" << endl;}
+            case 1: { cout << "opt 1" << endl;
+                universidadeInit(); fflush(stdin); getchar();
+            }
                 break;
-            case 2: { cout << "opt 2" << endl;}
+            case 2: { cout << "opt 2" << endl;
+                listUniCad(); fflush(stdin); getchar();
+            }
                 break;
             case 3: { cout << "opt 3" << endl;}
                 break;
@@ -105,6 +126,19 @@ void Principal::menuSelectUni(){
             }
         }
     }
+}
+
+void Principal::cadUni(){
+    Universidade* pUni; 
+    // char uniName[100];
+    string uniName;
+    cout << "Informe o nome da Universidade: " << endl;
+    cin >> uniName;
+    pUni = new Universidade();
+    pUni->setName(uniName);
+    cout << pUni->getName() << endl;
+    uniVector.push_back(pUni);
+    getchar();
 }
 
 void Principal::exec(){
@@ -186,6 +220,20 @@ void Principal::universidadeInit(){
     utfpr.setName("Universidade Tecnologica Federal do Parana");
     princeton.setName("Princeton");
     cambridge.setName("Cambridge");
+
+    uniVector.push_back(&utfpr);
+    uniVector.push_back(&princeton);
+    uniVector.push_back(&cambridge);
+}
+
+void Principal::listUniCad(){
+    if(!uniVector.empty()){
+        for(const auto uni : uniVector){
+            cout << uni->getName() << endl;
+        }
+    }else{
+        cout << "Nenhuma Universidade cadastrada.\n" << endl;
+    }
 }
 
 void Principal::dptoInit(){
