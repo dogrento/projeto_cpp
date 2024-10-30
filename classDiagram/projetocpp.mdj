@@ -2284,7 +2284,7 @@
 											"font": "Arial;13;1",
 											"left": 133,
 											"top": 79,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "Principal"
 										},
@@ -2319,7 +2319,7 @@
 									"font": "Arial;13;0",
 									"left": 128,
 									"top": 72,
-									"width": 159.12255859375,
+									"width": 211.53515625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGSvGVMjvu9W1g="
@@ -2356,7 +2356,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 102,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-prof0: Professor",
 											"horizontalAlignment": 0
@@ -2373,7 +2373,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 117,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-prof1: Professor",
 											"horizontalAlignment": 0
@@ -2390,7 +2390,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 132,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-prof2: Professor",
 											"horizontalAlignment": 0
@@ -2407,7 +2407,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 147,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-einstein: Professor",
 											"horizontalAlignment": 0
@@ -2424,7 +2424,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 162,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-newton: Professor",
 											"horizontalAlignment": 0
@@ -2441,7 +2441,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 177,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-aluno0: Aluno",
 											"horizontalAlignment": 0
@@ -2458,7 +2458,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 192,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-aluno1: Aluno",
 											"horizontalAlignment": 0
@@ -2475,7 +2475,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 207,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-utfpr: Universidade",
 											"horizontalAlignment": 0
@@ -2492,7 +2492,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 222,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-princeton: Universidade",
 											"horizontalAlignment": 0
@@ -2509,7 +2509,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 237,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-cambridge: Universidade",
 											"horizontalAlignment": 0
@@ -2526,7 +2526,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 252,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-daeln: Dpto",
 											"horizontalAlignment": 0
@@ -2543,7 +2543,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 267,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-dpto1: Dpto",
 											"horizontalAlignment": 0
@@ -2560,7 +2560,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 282,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-dpto2: Dpto",
 											"horizontalAlignment": 0
@@ -2613,7 +2613,7 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 297,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-fisica: Dpto",
 											"horizontalAlignment": 0
@@ -2630,17 +2630,34 @@
 											"font": "Arial;13;0",
 											"left": 133,
 											"top": 312,
-											"width": 149.12255859375,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "-mat: DPto",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGS0+JXaD+Bm+c=",
+											"_parent": {
+												"$ref": "AAAAAAGSvGVMjvvBgaA="
+											},
+											"model": {
+												"$ref": "AAAAAAGS0+JXQj9+jF4="
+											},
+											"font": "Arial;13;0",
+											"left": 133,
+											"top": 327,
+											"width": 201.53515625,
+											"height": 13,
+											"text": "+uniVector: vector<Universidade*>",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 128,
 									"top": 97,
-									"width": 159.12255859375,
-									"height": 233
+									"width": 211.53515625,
+									"height": 248
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -2663,8 +2680,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 335,
-											"width": 149.12255859375,
+											"top": 350,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "«Create»+Principal()",
 											"horizontalAlignment": 0
@@ -2680,8 +2697,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 350,
-											"width": 149.12255859375,
+											"top": 365,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "«Destroy»+Principal()",
 											"horizontalAlignment": 0
@@ -2697,8 +2714,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 365,
-											"width": 149.12255859375,
+											"top": 380,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "+menu(): void",
 											"horizontalAlignment": 0
@@ -2714,8 +2731,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 380,
-											"width": 149.12255859375,
+											"top": 395,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "+professorInit(): void",
 											"horizontalAlignment": 0
@@ -2731,8 +2748,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 395,
-											"width": 149.12255859375,
+											"top": 410,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "+alunoInit(): void",
 											"horizontalAlignment": 0
@@ -2748,8 +2765,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 410,
-											"width": 149.12255859375,
+											"top": 425,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "+universidadeInit(): void",
 											"horizontalAlignment": 0
@@ -2765,8 +2782,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 425,
-											"width": 149.12255859375,
+											"top": 440,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "+dptoInit(): void",
 											"horizontalAlignment": 0
@@ -2782,8 +2799,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 440,
-											"width": 149.12255859375,
+											"top": 455,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "+discInit(): void",
 											"horizontalAlignment": 0
@@ -2799,8 +2816,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 455,
-											"width": 149.12255859375,
+											"top": 470,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "+setUniDpto(): void",
 											"horizontalAlignment": 0
@@ -2816,8 +2833,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 470,
-											"width": 149.12255859375,
+											"top": 485,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "+setProfUni(): void",
 											"horizontalAlignment": 0
@@ -2833,8 +2850,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 485,
-											"width": 149.12255859375,
+											"top": 500,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "+setProfDpto(): void",
 											"horizontalAlignment": 0
@@ -2850,8 +2867,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 500,
-											"width": 149.12255859375,
+											"top": 515,
+											"width": 201.53515625,
 											"height": 13,
 											"text": "+setAlunoDisc(): void",
 											"horizontalAlignment": 0
@@ -2859,8 +2876,8 @@
 									],
 									"font": "Arial;13;0",
 									"left": 128,
-									"top": 330,
-									"width": 159.12255859375,
+									"top": 345,
+									"width": 211.53515625,
 									"height": 188
 								},
 								{
@@ -2900,8 +2917,8 @@
 							"containerChangeable": true,
 							"left": 128,
 							"top": 72,
-							"width": 158.12255859375,
-							"height": 446,
+							"width": 210.53515625,
+							"height": 461,
 							"nameCompartment": {
 								"$ref": "AAAAAAGSvGVMjvu8Xxc="
 							},
@@ -6717,6 +6734,15 @@
 							"name": "mat",
 							"visibility": "private",
 							"type": "DPto"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGS0+JXQj9+jF4=",
+							"_parent": {
+								"$ref": "AAAAAAGSvGVMjvu5uxs="
+							},
+							"name": "uniVector",
+							"type": "vector<Universidade*>"
 						}
 					],
 					"operations": [

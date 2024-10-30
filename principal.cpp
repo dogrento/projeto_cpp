@@ -65,16 +65,24 @@ void Principal::menu(){
 void Principal::menuUni(){
     int opt = -1;
 
-        system("clear");
     while(opt != 3){
+        system("clear");
         cout << " Menu Universidade: " << endl;
         cout << "   1 - Cadastrar Universidade." << endl;
         cout << "   2 - Selecionar Universidades cadastradas." << endl;
         // cout << "   2 - Buscar Universidades cadastradas." << endl;
         cout << "   3 - Voltar" << endl;
         cout << "Input -> ";
-        cin >> opt;
-        cout << opt<< endl;
+        // cin >> opt;
+
+        // Leitura segura para evitar erros com cin
+        if (!(cin >> opt)) {
+            cin.clear();  // Limpa o estado de erro
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o resto da linha
+            cout << "Entrada inválida. Pressione Enter para continuar...";
+            cin.get();  // Pausa esperando o Enter
+            continue;  // Volta ao início do loop
+        }
 
         switch(opt){
             case 1: {
@@ -82,13 +90,17 @@ void Principal::menuUni(){
             }
                 break;
             case 2: { listUniCad();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+                cin.get();  // Espera o Enter
             }
                 break;
             case 3: { cout << "opt 3" << endl;}
                 break;
             default:{
-                cout << "opçao invalida." << endl;
-                getchar();
+                cout << "Opção inválida. Pressione Enter para continuar...";
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+                cin.get();  // Espera o Enter
+
             }
         }
     }
@@ -115,7 +127,9 @@ void Principal::menuSelectUni(){
             }
                 break;
             case 2: { cout << "opt 2" << endl;
-                listUniCad(); fflush(stdin); getchar();
+                listUniCad(); 
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+                cin.get();  // Espera o Enter
             }
                 break;
             case 3: { cout << "opt 3" << endl;}
@@ -133,12 +147,14 @@ void Principal::cadUni(){
     // char uniName[100];
     string uniName;
     cout << "Informe o nome da Universidade: " << endl;
-    cin >> uniName;
+    // cin >> uniName;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+    getline(cin, uniName);
     pUni = new Universidade();
     pUni->setName(uniName);
     cout << pUni->getName() << endl;
     uniVector.push_back(pUni);
-    getchar();
+    // getchar();
 }
 
 void Principal::exec(){
