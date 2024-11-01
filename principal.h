@@ -1,6 +1,7 @@
 #ifndef PRINCIPAL_H
 #define PRINCIPAL_H
 
+#include <fstream>
 #include <vector>
 #include <iostream>
 using namespace std;
@@ -13,6 +14,7 @@ using namespace std;
 
 class Principal{
 private:
+    bool salvarFlag = false;
     // Os objetos derivados de Pessoa estao incluidos (ou agregados) ao obj principal.
     // Conceito de agregaçao forte
     // NOTA* A construtora sem param de cada obj é chamada.
@@ -47,6 +49,7 @@ public:
     void uniInterface(Universidade* u);
 
     void cadUni();
+    void salvarUni();
     
     void exec();
 

@@ -65,13 +65,13 @@ void Principal::menu(){
 void Principal::menuUni(){
     int opt = -1;
 
-    while(opt != 3){
+    while(opt != 4){
         system("clear");
         cout << " Menu Universidade: " << endl;
         cout << "   1 - Cadastrar Universidade." << endl;
         cout << "   2 - Selecionar Universidades cadastradas." << endl;
-        // cout << "   2 - Buscar Universidades cadastradas." << endl;
-        cout << "   3 - Voltar" << endl;
+        cout << "   3 - Salvar alterações." << endl;
+        cout << "   4 - Voltar." << endl;
         cout << "Input -> ";
         // cin >> opt;
 
@@ -94,7 +94,11 @@ void Principal::menuUni(){
                 // cin.get();  // Espera o Enter
             }
                 break;
-            case 3: { cout << "opt 3" << endl;}
+            case 3: { salvarUni();
+                cout << "Pressione Enter para continuar...";
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+                cin.get();  // Espera o Enter
+            }
                 break;
             default:{
                 cout << "Opção inválida. Pressione Enter para continuar...";
@@ -145,6 +149,8 @@ void Principal::uniInterface(Universidade* u){
 void Principal::cadUni(){
     Universidade* pUni; 
     string uniName;
+    string respInput;
+
     cout << "Informe o nome da Universidade: " << endl;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
     getline(cin, uniName);
@@ -154,9 +160,31 @@ void Principal::cadUni(){
     uniVector.push_back(pUni);
 
     cout << pUni->getName() << " cadastrado com sucesso." << endl;
+    salvarFlag = true;
+   
     cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
     getchar();
 
+}
+
+void Principal::salvarUni(){
+    if(salvarFlag){
+        ofstream sUni("uni.dat", ios::out);
+
+        if(!sUni){
+            cerr << "Arquivo nao pode ser aberto." << endl;
+            fflush(stdin);
+            getchar();
+            return;
+        }
+        cout << "Salvando..." << endl;
+        for(const auto uni : uniVector){
+            sUni << uni->getName() << ' ' << endl;
+        }
+    }else{
+        cout << "Nada para salvar." << endl;
+        return;
+    }
 }
 
 void Principal::exec(){
