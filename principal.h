@@ -44,6 +44,7 @@ public:
     void menuUni();
 
     void menuSelectUni();
+    void uniInterface(Universidade* u);
 
     void cadUni();
     

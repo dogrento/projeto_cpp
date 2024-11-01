@@ -89,9 +89,9 @@ void Principal::menuUni(){
                 cadUni();
             }
                 break;
-            case 2: { listUniCad();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
-                cin.get();  // Espera o Enter
+            case 2: { menuSelectUni();
+                // cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+                // cin.get();  // Espera o Enter
             }
                 break;
             case 3: { cout << "opt 3" << endl;}
@@ -108,30 +108,38 @@ void Principal::menuUni(){
 
 void Principal::menuSelectUni(){
     int opt = -1;
+    int optSize = uniVector.size() + 1;
 
-    while(opt != 3){
+    while(opt != optSize){
         system("clear");
         listUniCad();
+        cout << optSize << " - " << "Voltar" << endl;
 
-        switch(opt){
-            case 1: { cout << "opt 1" << endl;
-                universidadeInit(); fflush(stdin); getchar();
-            }
-                break;
-            case 2: { cout << "opt 2" << endl;
-                listUniCad(); 
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
-                cin.get();  // Espera o Enter
-            }
-                break;
-            case 3: { cout << "opt 3" << endl;}
-                break;
-            default:{
-                cout << "opçao invalida." << endl;
-                getchar();
-            }
+        // Leitura segura para evitar erros com cin
+        if (!(cin >> opt)) {
+            cin.clear();  // Limpa o estado de erro
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o resto da linha
+            cout << "Entrada inválida. Pressione Enter para continuar...";
+            // cin.get();  // Pausa esperando o Enter
+            continue;  // Volta ao início do loop
+        }
+
+        if(opt < optSize){
+            uniInterface(uniVector[opt-1]);
+            cout << "Pressione Enter para continuar...";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+            cin.get();  // Espera o Enter
+        }else{
+            cout << "Voltar. Pressione Enter para continuar...";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+            cin.get();  // Espera o Enter
+            break;
         }
     }
+}
+
+void Principal::uniInterface(Universidade* u){
+    cout << "opçao: " << u->getName() << endl;
 }
 
 void Principal::cadUni(){
@@ -240,7 +248,8 @@ void Principal::listUniCad(){
     int index = 1;
     if(!uniVector.empty()){
         for(const auto uni : uniVector){
-            cout << index << uni->getName() << endl;
+            cout << index << " - " << uni->getName() << endl;
+            index++;
         }
     }else{
         cout << "Nenhuma Universidade cadastrada.\n" << endl;
