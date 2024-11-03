@@ -65,14 +65,14 @@ void Principal::menu(){
 void Principal::menuUni(){
     int opt = -1;
 
-    while(opt != 4){
+    while(opt != 5){
         system("clear");
         cout << " Menu Universidade: " << endl;
         cout << "   1 - Cadastrar Universidade." << endl;
         cout << "   2 - Selecionar Universidades cadastradas." << endl;
         cout << "   3 - Salvar alterações." << endl;
-        cout << "   3 - Recuperar alterações." << endl;
-        cout << "   4 - Voltar." << endl;
+        cout << "   4 - Recuperar alterações." << endl;
+        cout << "   5 - Voltar." << endl;
         cout << "Input -> ";
         // cin >> opt;
 
@@ -99,7 +99,7 @@ void Principal::menuUni(){
                 cout << "Pressione Enter para continuar...";
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
                 cin.get();  // Espera o Enter
-            }
+            }break;
             case 4: { recuperarUni();
                 cout << "Pressione Enter para continuar...";
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
@@ -210,9 +210,13 @@ void Principal::recuperarUni(){
         Universidade *pauxUni;
         string uniN;
 
-        rUni >> uniN;
+        // rUni >> uniN;
+        // usar getline para recuperar a linha
+        getline(rUni, uniN);
 
-        if(!uniN.compare("")){
+
+        if(!uniN.empty()){
+            cout << "Recuperando:" << uniN << endl;
             pauxUni = new Universidade;
             pauxUni->setName(uniN);
             uniVector.push_back(pauxUni);
