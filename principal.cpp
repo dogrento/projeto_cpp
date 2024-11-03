@@ -71,6 +71,7 @@ void Principal::menuUni(){
         cout << "   1 - Cadastrar Universidade." << endl;
         cout << "   2 - Selecionar Universidades cadastradas." << endl;
         cout << "   3 - Salvar alterações." << endl;
+        cout << "   3 - Recuperar alterações." << endl;
         cout << "   4 - Voltar." << endl;
         cout << "Input -> ";
         // cin >> opt;
@@ -95,6 +96,11 @@ void Principal::menuUni(){
             }
                 break;
             case 3: { salvarUni();
+                cout << "Pressione Enter para continuar...";
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+                cin.get();  // Espera o Enter
+            }
+            case 4: { recuperarUni();
                 cout << "Pressione Enter para continuar...";
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
                 cin.get();  // Espera o Enter
@@ -191,6 +197,7 @@ void Principal::salvarUni(){
 }
 
 void Principal::recuperarUni(){
+    cout << "Recuperando Universidades." << endl;
     ifstream rUni("uni.dat", ios::in);
     if(!rUni){
         cerr << "Arquivo nao pode ser aberto." << endl;
@@ -198,6 +205,20 @@ void Principal::recuperarUni(){
         getchar();
         return;
     }
+    uniVector.clear();
+    while(!rUni.eof()){ // *eof stands for end of file
+        Universidade *pauxUni;
+        string uniN;
+
+        rUni >> uniN;
+
+        if(!uniN.compare("")){
+            pauxUni = new Universidade;
+            pauxUni->setName(uniN);
+            uniVector.push_back(pauxUni);
+        }
+    }
+
 }
 
 void Principal::exec(){
