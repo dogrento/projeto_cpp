@@ -191,10 +191,12 @@ void Principal::salvarUni(){
         cout << "Limpando vector de Universidade." << endl;
         uniVector.clear();
         salvarFlag = false;
+        sUni.close();
     }else{
         cout << "Nada para salvar." << endl;
         return;
     }
+
 }
 
 void Principal::recuperarUni(){
@@ -224,6 +226,25 @@ void Principal::recuperarUni(){
         }
     }
 
+    rUni.close();
+
+}
+
+int Principal::countUniCad(){
+    int countUni = 0;
+    ifstream cUni("data/uni.dat", ios::in);
+    if(!cUni){
+        cerr << "Arquivo nao pode ser aberto." << endl;
+        fflush(stdin);
+        getchar();
+        return;
+    }
+
+    while(!cUni.eof()){
+        countUni++;
+    }
+
+    return countUni;
 }
 
 void Principal::exec(){
