@@ -10,6 +10,7 @@ using namespace std;
 class Universidade{
 private:
     // char uniName[30];
+    int ID;
     string uniName;
     Dpto *dptoP[50];
 
@@ -21,6 +22,9 @@ public:
     // metodo
     void setName(string uniN){uniName = uniN;};
     string getName(){return uniName;};
+
+    void setID(int id){ID = id;};
+    int getID(){return ID;};
 
     void setDptoList(Dpto *d, int index){dptoP[index] = d;};
     void informaDptoList();

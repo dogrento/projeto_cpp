@@ -187,7 +187,7 @@ void Principal::salvarUni(){
         }
         for(const auto uni : uniVector){
             cout << "Salvando:" << uni->getName() << endl;
-            sUni << uni->getName() << ' ' << endl;
+            sUni << "name:" << uni->getName() << ", " << endl;
         }
         cout << "Limpando vector de Universidade." << endl;
         uniVector.clear();
