@@ -50,6 +50,7 @@ public:
 
     void cadUni();
     void salvarUni();
+    void recuperarUni();
     
     void exec();
 

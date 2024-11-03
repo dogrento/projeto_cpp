@@ -177,12 +177,25 @@ void Principal::salvarUni(){
             getchar();
             return;
         }
-        cout << "Salvando..." << endl;
         for(const auto uni : uniVector){
+            cout << "Salvando:" << uni->getName() << endl;
             sUni << uni->getName() << ' ' << endl;
         }
+        cout << "Limpando vector de Universidade." << endl;
+        uniVector.clear();
+        salvarFlag = false;
     }else{
         cout << "Nada para salvar." << endl;
+        return;
+    }
+}
+
+void Principal::recuperarUni(){
+    ifstream rUni("uni.dat", ios::in);
+    if(!rUni){
+        cerr << "Arquivo nao pode ser aberto." << endl;
+        fflush(stdin);
+        getchar();
         return;
     }
 }
