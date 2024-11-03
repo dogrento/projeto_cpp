@@ -187,7 +187,10 @@ void Principal::salvarUni(){
         }
         for(const auto uni : uniVector){
             cout << "Salvando:" << uni->getName() << endl;
-            sUni << "name:" << uni->getName() << ", " << endl;
+
+            sUni << "ID: " << uni->getID() << ", " <<
+                    "name:" << uni->getName() << ", " << 
+                    endl;
         }
         cout << "Limpando vector de Universidade." << endl;
         uniVector.clear();
@@ -213,6 +216,9 @@ void Principal::recuperarUni(){
     while(!rUni.eof()){ // *eof stands for end of file
         Universidade *pauxUni;
         string uniN;
+        string name;
+        string idStr;
+        int id;
 
         // rUni >> uniN;
         // usar getline para recuperar a linha
@@ -220,9 +226,13 @@ void Principal::recuperarUni(){
 
 
         if(!uniN.empty()){
-            cout << "Recuperando:" << uniN << endl;
+            idStr = parseValue(uniN, "ID");
+            name = parseValue(uniN, "name");
+            id = stoi(idStr); // converter string para int
+
             pauxUni = new Universidade;
-            pauxUni->setName(uniN);
+            pauxUni->setName(name);
+            pauxUni->setID(id);
             uniVector.push_back(pauxUni);
         }
     }
@@ -247,6 +257,25 @@ int Principal::countUniCad(){
     }
 
     return countUni;
+}
+
+string Principal::parseValue(const string input, const string key){
+    // encontra pos da key
+    size_t posKey = input.find(key + ':');
+    if(posKey == string::npos){
+        return ""; // retorna string vazia se a chave nao for encontrada
+    }
+
+    //move a pos para depois dos dois de ":"
+    size_t posInicio = posKey + key.length() + 1;
+
+    // encontra a prox virgula apos a key
+    size_t posFim = input.find(',', posInicio);
+    if(posFim == string::npos){
+        posFim = input.length(); // se nao houver ',', vai ate o final da string
+    }
+
+    return input.substr(posInicio, posFim - posInicio);
 }
 
 void Principal::exec(){

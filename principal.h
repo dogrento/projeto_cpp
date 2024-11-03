@@ -52,6 +52,8 @@ public:
     void salvarUni();
     void recuperarUni();
     int countUniCad();
+
+    string parseValue(const string input, const string key);
     
     void exec();
 
