@@ -175,7 +175,8 @@ void Principal::cadUni(){
 
 void Principal::salvarUni(){
     if(salvarFlag){
-        ofstream sUni("uni.dat", ios::out);
+        // ofstream sUni("uni.dat", ios::out);
+        ofstream sUni("data/uni.dat", ios::app); // modo append
 
         if(!sUni){
             cerr << "Arquivo nao pode ser aberto." << endl;
@@ -198,7 +199,7 @@ void Principal::salvarUni(){
 
 void Principal::recuperarUni(){
     cout << "Recuperando Universidades." << endl;
-    ifstream rUni("uni.dat", ios::in);
+    ifstream rUni("data/uni.dat", ios::in);
     if(!rUni){
         cerr << "Arquivo nao pode ser aberto." << endl;
         fflush(stdin);
