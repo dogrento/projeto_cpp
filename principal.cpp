@@ -67,6 +67,7 @@ void Principal::menuUni(){
 
     while(opt != 5){
         system("clear");
+        cout << "Univesidades cadastradas: " << countUniCad() << endl;
         cout << " Menu Universidade: " << endl;
         cout << "   1 - Cadastrar Universidade." << endl;
         cout << "   2 - Selecionar Universidades cadastradas." << endl;
@@ -237,10 +238,11 @@ int Principal::countUniCad(){
         cerr << "Arquivo nao pode ser aberto." << endl;
         fflush(stdin);
         getchar();
-        return;
+        return -1;
     }
 
-    while(!cUni.eof()){
+    string dummy;
+    while(getline(cUni, dummy)){
         countUni++;
     }
 

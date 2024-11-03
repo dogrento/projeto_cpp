@@ -51,7 +51,7 @@ public:
     void cadUni();
     void salvarUni();
     void recuperarUni();
-    void countUniCad();
+    int countUniCad();
     
     void exec();
 
