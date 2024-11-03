@@ -176,70 +176,123 @@ void Principal::cadUni(){
 
 void Principal::salvarUni(){
     if(salvarFlag){
-        // ofstream sUni("uni.dat", ios::out);
-        ofstream sUni("data/uni.dat", ios::app); // modo append
+        ofstream arq;
+        arq.open("data/gp.dat", ios::binary | ios::out);
 
-        if(!sUni){
-            cerr << "Arquivo nao pode ser aberto." << endl;
-            fflush(stdin);
-            getchar();
-            return;
-        }
-        for(const auto uni : uniVector){
-            cout << "Salvando:" << uni->getName() << endl;
+        // escreve o tamanho do grupo
+        // arq.write((char*) &uniVector, sizeof(uniVector));
 
-            sUni << "ID: " << uni->getID() << ", " <<
-                    "name:" << uni->getName() << ", " << 
-                    endl;
+        // escreve todos os obj Universidade
+        for(size_t i = 0; i < uniVector.size(); i++){
+            int tamanho = uniVector[i]->getName().size();
+            cout << "tamanho a ser salvo: " << tamanho << endl;
+            arq.write((char*) &tamanho, sizeof(tamanho));
+            arq.write((char*) &uniVector[i]->getName()[0], tamanho);
         }
-        cout << "Limpando vector de Universidade." << endl;
-        uniVector.clear();
-        salvarFlag = false;
-        sUni.close();
     }else{
         cout << "Nada para salvar." << endl;
         return;
     }
-
 }
+// void Principal::salvarUni(){
+//     if(salvarFlag){
+//         // ofstream sUni("uni.dat", ios::out);
+//         ofstream sUni("data/uni.dat", ios::app); // modo append
+
+//         if(!sUni){
+//             cerr << "Arquivo nao pode ser aberto." << endl;
+//             fflush(stdin);
+//             getchar();
+//             return;
+//         }
+//         for(const auto uni : uniVector){
+//             cout << "Salvando:" << uni->getName() << endl;
+
+//             sUni << "ID: " << uni->getID() << ", " <<
+//                     "name:" << uni->getName() << ", " << 
+//                     endl;
+//         }
+//         cout << "Limpando vector de Universidade." << endl;
+//         uniVector.clear();
+//         salvarFlag = false;
+//         sUni.close();
+//     }else{
+//         cout << "Nada para salvar." << endl;
+//         return;
+//     }
+
+// }
 
 void Principal::recuperarUni(){
     cout << "Recuperando Universidades." << endl;
-    ifstream rUni("data/uni.dat", ios::in);
-    if(!rUni){
-        cerr << "Arquivo nao pode ser aberto." << endl;
-        fflush(stdin);
-        getchar();
-        return;
-    }
+    ifstream rUni;
+
+    rUni.open("data/gp.dat", ios::binary | ios::in);
+        // Limpar o vetor atual antes de carregar novos dados
     uniVector.clear();
-    while(!rUni.eof()){ // *eof stands for end of file
-        Universidade *pauxUni;
-        string uniN;
-        string name;
-        string idStr;
-        int id;
 
-        // rUni >> uniN;
-        // usar getline para recuperar a linha
-        getline(rUni, uniN);
+    while (rUni.peek() != EOF) {  // Continuar enquanto houver dados no arquivo
+        int tamanho;
+        
+        // Ler o tamanho do nome
+        rUni.read(reinterpret_cast<char*>(&tamanho), sizeof(tamanho));
+        if (!rUni) break;  // Sair do loop caso a leitura falhe
+        
+        // Ler o nome da universidade com o tamanho específico
+        std::string nome(tamanho, '\0');  // Inicializar a string com o tamanho necessário
+        rUni.read(&nome[0], tamanho);
+        
+        if (!rUni) break;  // Sair do loop caso a leitura falhe
+        
+        // Criar e adicionar a nova universidade ao vetor
+        Universidade* novaUni = new Universidade;
+        novaUni->setName(nome);
+        uniVector.push_back(novaUni);
 
-
-        if(!uniN.empty()){
-            idStr = parseValue(uniN, "ID");
-            name = parseValue(uniN, "name");
-            id = stoi(idStr); // converter string para int
-
-            pauxUni = new Universidade;
-            pauxUni->setName(name);
-            pauxUni->setID(id);
-            uniVector.push_back(pauxUni);
-        }
+        cout << "Universidade carregada: " << nome << endl;
     }
 
+    
     rUni.close();
 
 }
+// void Principal::recuperarUni(){
+//     cout << "Recuperando Universidades." << endl;
+//     ifstream rUni("data/uni.dat", ios::in);
+//     if(!rUni){
+//         cerr << "Arquivo nao pode ser aberto." << endl;
+//         fflush(stdin);
+//         getchar();
+//         return;
+//     }
+//     uniVector.clear();
+//     while(!rUni.eof()){ // *eof stands for end of file
+//         Universidade *pauxUni;
+//         string uniN;
+//         string name;
+//         string idStr;
+//         int id;
+
+//         // rUni >> uniN;
+//         // usar getline para recuperar a linha
+//         getline(rUni, uniN);
+
+
+//         if(!uniN.empty()){
+//             idStr = parseValue(uniN, "ID");
+//             name = parseValue(uniN, "name");
+//             id = stoi(idStr); // converter string para int
+
+//             pauxUni = new Universidade;
+//             pauxUni->setName(name);
+//             pauxUni->setID(id);
+//             uniVector.push_back(pauxUni);
+//         }
+//     }
+
+//     rUni.close();
+
+// }
 
 int Principal::countUniCad(){
     int countUni = 0;
