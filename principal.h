@@ -52,6 +52,7 @@ public:
     void salvarUni();
     void recuperarUni();
     int countUniCad();
+    bool existeUni(string un);
 
     string parseValue(const string input, const string key);
     
