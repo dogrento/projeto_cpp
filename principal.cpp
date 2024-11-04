@@ -195,10 +195,12 @@ void Principal::salvarUni(){
         // escreve todos os obj Universidade
         for(size_t i = 0; i < uniVector.size(); i++){
             if(!existeUni(uniVector[i]->getName())){
-                int tamanho = uniVector[i]->getName().size();
+                int nameTamanho = uniVector[i]->getName().size();
+                int id = uniVector[i]->getID();
                 cout << "Salvando: " << uniVector[i]->getName() << endl;
-                arq.write((char*) &tamanho, sizeof(tamanho));
-                arq.write((char*) &uniVector[i]->getName()[0], tamanho);
+                arq.write((char*) &nameTamanho, sizeof(nameTamanho));
+                arq.write((char*) &uniVector[i]->getName()[0], nameTamanho);
+                arq.write((char*) &id, sizeof(id));
             }
         }
         cout << "Salvamento completo." << endl;
@@ -221,6 +223,7 @@ void Principal::recuperarUni(){
 
     while (rUni.peek() != EOF) {  // Continuar enquanto houver dados no arquivo
         int tamanho;
+        int id;
         
         // Ler o tamanho do nome
         rUni.read(reinterpret_cast<char*>(&tamanho), sizeof(tamanho));
@@ -229,15 +232,17 @@ void Principal::recuperarUni(){
         // Ler o nome da universidade com o tamanho específico
         std::string nome(tamanho, '\0');  // Inicializar a string com o tamanho necessário
         rUni.read(&nome[0], tamanho);
+        rUni.read((char*)&id, sizeof(id));
         
         if (!rUni) break;  // Sair do loop caso a leitura falhe
         
         // Criar e adicionar a nova universidade ao vetor
         Universidade* novaUni = new Universidade;
         novaUni->setName(nome);
+        novaUni->setID(id);
         uniVector.push_back(novaUni);
 
-        cout << "Universidade carregada: " << nome << endl;
+        cout << "Universidade carregada: " << nome << " "<< id << endl;
     }
     
     rUni.close();
@@ -268,12 +273,6 @@ bool Principal::existeUni(string un){
             rUni.close();
             return true;
         }
-        // // Criar e adicionar a nova universidade ao vetor
-        // Universidade* novaUni = new Universidade;
-        // novaUni->setName(nome);
-        // uniVector.push_back(novaUni);
-
-        // cout << "Universidade carregada: " << nome << endl;
     }
     
     rUni.close();
@@ -306,24 +305,24 @@ int Principal::countUniCad(){
     return contador;
 }
 
-string Principal::parseValue(const string input, const string key){
-    // encontra pos da key
-    size_t posKey = input.find(key + ':');
-    if(posKey == string::npos){
-        return ""; // retorna string vazia se a chave nao for encontrada
-    }
+// string Principal::parseValue(const string input, const string key){
+//     // encontra pos da key
+//     size_t posKey = input.find(key + ':');
+//     if(posKey == string::npos){
+//         return ""; // retorna string vazia se a chave nao for encontrada
+//     }
 
-    //move a pos para depois dos dois de ":"
-    size_t posInicio = posKey + key.length() + 1;
+//     //move a pos para depois dos dois de ":"
+//     size_t posInicio = posKey + key.length() + 1;
 
-    // encontra a prox virgula apos a key
-    size_t posFim = input.find(',', posInicio);
-    if(posFim == string::npos){
-        posFim = input.length(); // se nao houver ',', vai ate o final da string
-    }
+//     // encontra a prox virgula apos a key
+//     size_t posFim = input.find(',', posInicio);
+//     if(posFim == string::npos){
+//         posFim = input.length(); // se nao houver ',', vai ate o final da string
+//     }
 
-    return input.substr(posInicio, posFim - posInicio);
-}
+//     return input.substr(posInicio, posFim - posInicio);
+// }
 
 void Principal::exec(){
     // Obter a data e hora atual

@@ -52,9 +52,10 @@ public:
     void salvarUni();
     void recuperarUni();
     int countUniCad();
+    // int setID();
     bool existeUni(string un);
 
-    string parseValue(const string input, const string key);
+    // string parseValue(const string input, const string key);
     
     void exec();
 
