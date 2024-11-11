@@ -9,18 +9,23 @@ using namespace std;
 #include "dpto.h"
 
 class Universidade{
+/*
+            ATRIBUTOS
+*/
 private:
     // char uniName[30];
-    int                     ID;
-    string                  uniName;
-    Dpto                    *dptoP[50];
+    int             ID;
+    string          uniName;
+    Dpto            *dptoP[50];
 
+/*
+            METODOS
+*/
 public:
-    // Construtora
-    Universidade            ();
-    ~Universidade           ();
+    // Construtora/Destrutora
+    Universidade    ();
+    ~Universidade   ();
 
-    // metodo
     void            setName          (const string uniN){uniName = uniN;};
     string          getName          (){return uniName;};
            
