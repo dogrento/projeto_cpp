@@ -24,9 +24,20 @@ class MyList{
     class DptoList{
         /* ATRIBUTOS */
         private:
-        MyList::DptoEl* nextDptoEl;
-        MyList::DptoEl* prevDptoEl;
+        int countDpto;
+        int maxDpto; 
+        
+        MyList::DptoEl* pFirstDptoEl;
+        MyList::DptoEl* pAtDptoEl;
         
         /* METODOS */
+        public:
+        DptoList(int cd, int md);
+        DptoList();
+        ~DptoList();
+
+        void insertDpto(Dpto* d);
+
+        // void showDptoList();
     };
 };
