@@ -4,19 +4,20 @@ Universidade::Universidade():
 ID(-1),
 uniName("")
 {
-    for(int i = 0; i < 50; i++){
-        dptoP[i] = nullptr;
-    }
+    // for(int i = 0; i < 50; i++){
+    //     dptoP[i] = nullptr;
+    // }
 }
 
 Universidade::~Universidade(){}
 
 void Universidade::informaDptoList(){
-    for(int i = 0; i < 50; i++){
-        if(dptoP[i] != nullptr){
-            dptoP[i]->informaDpto();
-        }
-    }
+    // for(int i = 0; i < 50; i++){
+    //     if(dptoP[i] != nullptr){
+    //         dptoP[i]->informaDpto();
+    //     }
+    // }
+    dptoList.showDptoList();
 }
 
 void Universidade::salvaUni(ofstream& f){
