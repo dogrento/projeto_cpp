@@ -78,6 +78,5 @@ void MyList::DptoList::insertDpto(Dpto* d){
         cerr << "Departamento nao pode se inserida."
              << "Quantidade de dpto ja lotada em: "
              << maxDpto << " departamentos." << endl; 
-             
     }
 }

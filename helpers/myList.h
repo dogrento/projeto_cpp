@@ -38,6 +38,14 @@ class MyList{
 
         void insertDpto(Dpto* d);
 
-        // void showDptoList();
+        void showDptoList(){
+            DptoEl* paux;
+            paux = pFirstDptoEl;
+
+            while(paux != nullptr){
+                cout << "Departamento: " << paux->getDpto()->getName() << endl;
+                paux = paux->pNextDpto;
+            }
+        };
     };
 };
