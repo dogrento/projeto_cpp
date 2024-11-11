@@ -55,7 +55,7 @@ public:
     // int setID();
     bool existeUni(string un);
 
-    void cadDpto();
+    void cadDpto(Universidade* u);
 
     // string parseValue(const string input, const string key);
     

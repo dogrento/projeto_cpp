@@ -177,6 +177,7 @@ void Principal::uniInterface(Universidade* u){
                 cin.get();  // Espera o Enter
             }break;
             case 2: { 
+                cadDpto(u);
                 // cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
                 // cin.get();  // Espera o Enter
             }break;
@@ -216,16 +217,18 @@ void Principal::cadUni(){
     }
 }
 
-void Principal::cadDpto(){
+void Principal::cadDpto(Universidade* u){
     Dpto* pd;
     string name;
 
-    cout << "Informe o nome da Universidade: " << endl;
+    cout << "Informe o nome do Departamento: " << endl;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
     getline(cin, name);
 
     pd = new Dpto();
     pd->setName(name);
+
+    u->setDptoList(pd);
 }
 
 void Principal::salvarUni(){
