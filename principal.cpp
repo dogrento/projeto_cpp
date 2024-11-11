@@ -78,7 +78,6 @@ void Principal::menuUni(){
         cout << "   4 - Recuperar alterações." << endl;
         cout << "   5 - Voltar." << endl;
         cout << "Input -> ";
-        // cin >> opt;
 
         // Leitura segura para evitar erros com cin
         if (!(cin >> opt)) {
@@ -116,7 +115,6 @@ void Principal::menuUni(){
                 cout << "Opção inválida. Pressione Enter para continuar...";
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
                 cin.get();  // Espera o Enter
-
             }
         }
     }
@@ -155,13 +153,51 @@ void Principal::menuSelectUni(){
 }
 
 void Principal::uniInterface(Universidade* u){
-    cout << "opçao: " << u->getName() << endl;
+    int opt = -1;
+    while(opt != 3){
+        system("clear");
+        cout << "Interface: " << u->getName() << endl;
+        cout << "   1 - Mostrar Departamentos." << endl;
+        cout << "   2 - Cadastrar Cadastrar." << endl;
+        cout << "   3 - Voltar." << endl;
+        cout << "Input -> ";
+
+        // Leitura segura para evitar erros com cin
+        if (!(cin >> opt)) {
+            cin.clear();  // Limpa o estado de erro
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o resto da linha
+            cout << "Entrada inválida. Pressione Enter para continuar...";
+            cin.get();  // Pausa esperando o Enter
+            continue;  // Volta ao início do loop
+        }
+        switch(opt){
+            case 1: {
+                u->informaDptoList();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+                cin.get();  // Espera o Enter
+            }break;
+            case 2: { 
+                // cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+                // cin.get();  // Espera o Enter
+            }break;
+            case 3: { 
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+                cin.get();  // Espera o Enter
+            }break;
+            default:{
+                cout << "Opção inválida. Pressione Enter para continuar...";
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+                cin.get();  // Espera o Enter
+
+            }
+        }
+    }
 }
 
 void Principal::cadUni(){
     Universidade* pUni; 
     string uniName;
-    string respInput;
+    // string respInput;
 
     cout << "Informe o nome da Universidade: " << endl;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
@@ -178,10 +214,18 @@ void Principal::cadUni(){
         cerr << "Universidade ja cadastrada!" << endl;
         return;
     }
-   
-    // cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
-    // getchar();
+}
 
+void Principal::cadDpto(){
+    Dpto* pd;
+    string name;
+
+    cout << "Informe o nome da Universidade: " << endl;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignora o '\n' pendente
+    getline(cin, name);
+
+    pd = new Dpto();
+    pd->setName(name);
 }
 
 void Principal::salvarUni(){
@@ -431,11 +475,11 @@ void Principal::discInit(){
 
 void Principal::setUniDpto(){
     cout << "Associando Dpto a Universidades."<< endl;
-    utfpr.setDptoList(&daeln, 0);
-    utfpr.setDptoList(&dpto1, 1);
-    utfpr.setDptoList(&dpto2, 2);
-    princeton.setDptoList(&fisica, 0);
-    cambridge.setDptoList(&mat, 0);
+    utfpr.setDptoList(&daeln);
+    utfpr.setDptoList(&dpto1);
+    utfpr.setDptoList(&dpto2);
+    princeton.setDptoList(&fisica);
+    cambridge.setDptoList(&mat);
 }
 
 void Principal::setProfUni(){

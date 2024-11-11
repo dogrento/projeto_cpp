@@ -55,6 +55,8 @@ public:
     // int setID();
     bool existeUni(string un);
 
+    void cadDpto();
+
     // string parseValue(const string input, const string key);
     
     void exec();

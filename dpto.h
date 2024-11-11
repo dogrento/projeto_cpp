@@ -1,6 +1,4 @@
 // #pragma once
-#ifndef DPTO_H
-#define DPTO_H
 
 #include <string.h>
 #include <iostream>
@@ -14,10 +12,9 @@ class Disc; // evita iclude recursivo.
 class Dpto{
     private:
     int ID;
-    char dptoName[100];
+    // char dptoName[100];
+    string dptoName;
     Universidade *uniP; // Associacao com uma Universidade
-    // Disc *pDiscPrim; // Associacao com varias Disc
-    // Disc *pDiscAtual; // Associacao com varias Disc
     list<Disc*>discList;
 
     public:
@@ -29,8 +26,8 @@ class Dpto{
     //metodos
     void setID(int id){ID = id;};
     int getID(){return ID;};
-    void setName(const char dptoN[]){strcpy(dptoName, dptoN);};
-    char* getName(){return dptoName;};
+    void setName(const string dptoN){dptoName = dptoN;};
+    const string getName(){return dptoName;};
     void setUni(Universidade *u){uniP = u;};
     Universidade* getUni(){return uniP;};
 
@@ -39,5 +36,3 @@ class Dpto{
     void insertDisc(Disc* pD);
     void listDisc();
 };
-
-#endif
