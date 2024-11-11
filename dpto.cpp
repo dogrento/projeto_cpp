@@ -9,7 +9,7 @@ setName("");
 Dpto::~Dpto(){
 }
 
-void Dpto::informaDpto(){
+void Dpto::informaDpto()const{
     cout << "Departamento: " << getID() <<' '<< getName() << endl;
 }
 
@@ -44,6 +44,24 @@ void Dpto::salvaDpto(ofstream& f){
 //     f.write((char*) &this->getName()[0], nameTamanho);
 //     f.write((char*) &id, sizeof(id));
 // }
+
+Dpto* Dpto::recuperaDpto(ifstream& f){
+    size_t nameSize;
+    int id;
+    // Ler o tamanho do nome
+    f.read(reinterpret_cast<char*>(&nameSize), sizeof(nameSize));
+    // Ler o nome da universidade com o tamanho específico
+    std::string nome(nameSize, '\0');  // Inicializar a string com o tamanho necessário
+    f.read(&nome[0], nameSize);
+    f.read((char*)&id, sizeof(id));
+    Dpto* d = new Dpto;
+    d->setName(nome);
+    d->setID(id);
+
+    cout << "Recuperando " << d->getName() << endl;
+    
+    return d;
+}
 
 // Universidade* Universidade::recuperaUni(ifstream& f){
 //     int tamanho;

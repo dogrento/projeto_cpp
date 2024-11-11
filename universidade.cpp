@@ -25,6 +25,9 @@ void Universidade::informaDptoList(){
 }
 
 void Universidade::salvaUni(ofstream& f){
+    if(!dptoList.isEmpty()){
+        dptoList.salvarDpto(f);
+    }
     int nameTamanho = this->getName().size();
     int id = this->getID();
     cout << "Salvando: " << this->getName() << endl;
@@ -37,6 +40,8 @@ Universidade* Universidade::recuperaUni(ifstream& f){
     int tamanho;
     int id;
     
+    Universidade* novaUni = new Universidade;
+    novaUni->dptoList.recuperaDpto(f);
     // Ler o tamanho do nome
     f.read(reinterpret_cast<char*>(&tamanho), sizeof(tamanho));
     // if (!f) break;  // Sair do loop caso a leitura falhe
@@ -46,7 +51,6 @@ Universidade* Universidade::recuperaUni(ifstream& f){
     f.read(&nome[0], tamanho);
     f.read((char*)&id, sizeof(id));
 
-    Universidade* novaUni = new Universidade;
     novaUni->setName(nome);
     novaUni->setID(id);
 

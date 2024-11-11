@@ -24,15 +24,15 @@ class Dpto{
 
     //metodos
     void          setID(int id)               {ID = id;};
-    int           getID()                     {return ID;};
+    int           getID()const                {return ID;};
 
     void          setName(const string dptoN) {dptoName = dptoN;};
-    const string  getName()                   {return dptoName;};
+    const string  getName()const              {return dptoName;};
 
     void          setUni(Universidade *u)     {uniP = u;};
-    Universidade* getUni()                    {return uniP;};
+    Universidade* getUni()const               {return uniP;};
 
-    void          informaDpto();
+    void          informaDpto()const;
          
     void          insertDisc(Disc* pD);
     void          listDisc();
