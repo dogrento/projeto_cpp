@@ -21,16 +21,17 @@ public:
     ~Universidade           ();
 
     // metodo
-    void   setName          (string uniN){uniName = uniN;};
-    string getName          (){return uniName;};
-  
-    void   setID            (int id){ID = id;};
-    int    getID            (){return ID;};
-  
-    void   setDptoList      (Dpto *d, int index){dptoP[index] = d;};
-    void   informaDptoList  ();
-  
-    void   salvaUni         (ofstream& f);
+    void            setName          (const string uniN){uniName = uniN;};
+    string          getName          (){return uniName;};
+           
+    void            setID            (const int id){ID = id;};
+    int             getID            (){return ID;};
+           
+    void            setDptoList      (Dpto *d, int index){dptoP[index] = d;};
+    void            informaDptoList  ();
+           
+    void            salvaUni         (ofstream& f);
+    Universidade*   recuperaUni      (ifstream& f);
 };
 
 #endif

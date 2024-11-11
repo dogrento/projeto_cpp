@@ -218,27 +218,11 @@ void Principal::recuperarUni(){
         uniVector.clear();
 
         while (rUni.peek() != EOF) {  // Continuar enquanto houver dados no arquivo
-            int tamanho;
-            int id;
-            
-            // Ler o tamanho do nome
-            rUni.read(reinterpret_cast<char*>(&tamanho), sizeof(tamanho));
-            if (!rUni) break;  // Sair do loop caso a leitura falhe
-            
-            // Ler o nome da universidade com o tamanho específico
-            std::string nome(tamanho, '\0');  // Inicializar a string com o tamanho necessário
-            rUni.read(&nome[0], tamanho);
-            rUni.read((char*)&id, sizeof(id));
-            
-            if (!rUni) break;  // Sair do loop caso a leitura falhe
-            
-            // Criar e adicionar a nova universidade ao vetor
-            Universidade* novaUni = new Universidade;
-            novaUni->setName(nome);
-            novaUni->setID(id);
-            uniVector.push_back(novaUni);
+            Universidade uni;
+            uniVector.push_back(uni.recuperaUni(rUni));
 
-            cout << "Universidade carregada: " << nome << " "<< id << endl;
+            cout << "Universidade carregada: " << uni.getName() << 
+            " "<< uni.getID() << endl;
         }
         
         rUni.close();
