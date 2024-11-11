@@ -194,14 +194,7 @@ void Principal::salvarUni(){
 
         // escreve todos os obj Universidade
         for(size_t i = 0; i < uniVector.size(); i++){
-            if(!existeUni(uniVector[i]->getName())){
-                int nameTamanho = uniVector[i]->getName().size();
-                int id = uniVector[i]->getID();
-                cout << "Salvando: " << uniVector[i]->getName() << endl;
-                arq.write((char*) &nameTamanho, sizeof(nameTamanho));
-                arq.write((char*) &uniVector[i]->getName()[0], nameTamanho);
-                arq.write((char*) &id, sizeof(id));
-            }
+            uniVector[i]->salvaUni(arq);
         }
         cout << "Salvamento completo." << endl;
         cout << "Limpando vector de universidades." << endl;
@@ -214,38 +207,42 @@ void Principal::salvarUni(){
 }
 
 void Principal::recuperarUni(){
-    cout << "Recuperando Universidades." << endl;
-    ifstream rUni;
+    if(countUniCad() == 0){
+        cout << "Nada para recuperar." << endl;
+    }else{
+        cout << "Recuperando Universidades." << endl;
+        ifstream rUni;
 
-    rUni.open("data/gp.dat", ios::binary | ios::in);
-        // Limpar o vetor atual antes de carregar novos dados
-    uniVector.clear();
+        rUni.open("data/gp.dat", ios::binary | ios::in);
+            // Limpar o vetor atual antes de carregar novos dados
+        uniVector.clear();
 
-    while (rUni.peek() != EOF) {  // Continuar enquanto houver dados no arquivo
-        int tamanho;
-        int id;
-        
-        // Ler o tamanho do nome
-        rUni.read(reinterpret_cast<char*>(&tamanho), sizeof(tamanho));
-        if (!rUni) break;  // Sair do loop caso a leitura falhe
-        
-        // Ler o nome da universidade com o tamanho específico
-        std::string nome(tamanho, '\0');  // Inicializar a string com o tamanho necessário
-        rUni.read(&nome[0], tamanho);
-        rUni.read((char*)&id, sizeof(id));
-        
-        if (!rUni) break;  // Sair do loop caso a leitura falhe
-        
-        // Criar e adicionar a nova universidade ao vetor
-        Universidade* novaUni = new Universidade;
-        novaUni->setName(nome);
-        novaUni->setID(id);
-        uniVector.push_back(novaUni);
+        while (rUni.peek() != EOF) {  // Continuar enquanto houver dados no arquivo
+            int tamanho;
+            int id;
+            
+            // Ler o tamanho do nome
+            rUni.read(reinterpret_cast<char*>(&tamanho), sizeof(tamanho));
+            if (!rUni) break;  // Sair do loop caso a leitura falhe
+            
+            // Ler o nome da universidade com o tamanho específico
+            std::string nome(tamanho, '\0');  // Inicializar a string com o tamanho necessário
+            rUni.read(&nome[0], tamanho);
+            rUni.read((char*)&id, sizeof(id));
+            
+            if (!rUni) break;  // Sair do loop caso a leitura falhe
+            
+            // Criar e adicionar a nova universidade ao vetor
+            Universidade* novaUni = new Universidade;
+            novaUni->setName(nome);
+            novaUni->setID(id);
+            uniVector.push_back(novaUni);
 
-        cout << "Universidade carregada: " << nome << " "<< id << endl;
+            cout << "Universidade carregada: " << nome << " "<< id << endl;
+        }
+        
+        rUni.close();
     }
-    
-    rUni.close();
 }
 
 bool Principal::existeUni(string un){
@@ -260,13 +257,19 @@ bool Principal::existeUni(string un){
         int tamanho;
         
         // Ler o tamanho do nome
+        cout << "lendo tamanho" << endl;
         rUni.read(reinterpret_cast<char*>(&tamanho), sizeof(tamanho));
         if (!rUni) break;  // Sair do loop caso a leitura falhe
         
         // Ler o nome da universidade com o tamanho específico
+        cout << "lendo nome" << endl;
         std::string nome(tamanho, '\0');  // Inicializar a string com o tamanho necessário
         rUni.read(&nome[0], tamanho);
-        
+        if (!rUni) break;  // Sair do loop caso a leitura falhe
+
+        cout << "lendo id" << endl;
+        int id;  // Inicializar a string com o tamanho necessário
+        rUni.read((char*)&id, sizeof(id));
         if (!rUni) break;  // Sair do loop caso a leitura falhe
         
         if(nome == un){

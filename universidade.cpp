@@ -18,3 +18,12 @@ void Universidade::informaDptoList(){
         }
     }
 }
+
+void Universidade::salvaUni(ofstream& f){
+    int nameTamanho = this->getName().size();
+    int id = this->getID();
+    cout << "Salvando: " << this->getName() << endl;
+    f.write((char*) &nameTamanho, sizeof(nameTamanho));
+    f.write((char*) &this->getName()[0], nameTamanho);
+    f.write((char*) &id, sizeof(id));
+}
