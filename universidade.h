@@ -7,19 +7,21 @@
 using namespace std;
 
 #include "dpto.h"
+#include "helpers/myList.h"
 
 class Universidade{
 /*
-            ATRIBUTOS
+    ATRIBUTOS
 */
 private:
     // char uniName[30];
-    int             ID;
-    string          uniName;
-    Dpto            *dptoP[50];
+    int                ID;
+    string             uniName;
+    MyList::DptoList   dptoList;
+    // Dpto            *dptoP[50];
 
 /*
-            METODOS
+    METODOS
 */
 public:
     // Construtora/Destrutora
@@ -32,7 +34,7 @@ public:
     void            setID            (const int id){ID = id;};
     int             getID            (){return ID;};
            
-    void            setDptoList      (Dpto *d, int index){dptoP[index] = d;};
+    void            setDptoList      (Dpto *d){dptoList.insertDpto(d);};
     void            informaDptoList  ();
            
     void            salvaUni         (ofstream& f);
