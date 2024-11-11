@@ -37,6 +37,7 @@ class MyList{
         ~DptoList();
 
         void insertDpto(Dpto* d);
+        bool isEmpty() const{return pFirstDptoEl == nullptr;};
 
         void showDptoList(){
             DptoEl* paux;

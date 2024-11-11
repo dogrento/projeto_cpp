@@ -11,11 +11,10 @@ class Disc; // evita iclude recursivo.
 
 class Dpto{
     private:
-    int ID;
-    // char dptoName[100];
-    string dptoName;
+    int           ID;
+    string        dptoName;
     Universidade *uniP; // Associacao com uma Universidade
-    list<Disc*>discList;
+    list<Disc*>   discList;
 
     public:
     // construtora
@@ -24,15 +23,20 @@ class Dpto{
     ~Dpto();
 
     //metodos
-    void setID(int id){ID = id;};
-    int getID(){return ID;};
-    void setName(const string dptoN){dptoName = dptoN;};
-    const string getName(){return dptoName;};
-    void setUni(Universidade *u){uniP = u;};
-    Universidade* getUni(){return uniP;};
+    void          setID(int id)               {ID = id;};
+    int           getID()                     {return ID;};
 
-    void informaDpto();
+    void          setName(const string dptoN) {dptoName = dptoN;};
+    const string  getName()                   {return dptoName;};
 
-    void insertDisc(Disc* pD);
-    void listDisc();
+    void          setUni(Universidade *u)     {uniP = u;};
+    Universidade* getUni()                    {return uniP;};
+
+    void          informaDpto();
+         
+    void          insertDisc(Disc* pD);
+    void          listDisc();
+
+    void          salvaDpto(ofstream& f);
+    Dpto*         recuperaDpto(ifstream& f);
 };

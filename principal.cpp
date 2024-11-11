@@ -229,6 +229,7 @@ void Principal::cadDpto(Universidade* u){
     pd->setName(name);
 
     u->setDptoList(pd);
+    salvarFlag = true;
 }
 
 void Principal::salvarUni(){

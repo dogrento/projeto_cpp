@@ -64,7 +64,8 @@ void MyList::DptoList::insertDpto(Dpto* d){
         paux->setDpto(d);
         
         // Se lista estiver vazia
-        if(pFirstDptoEl == nullptr){
+        // if(pFirstDptoEl == nullptr){
+        if(isEmpty()){
             pFirstDptoEl = paux;
             pAtDptoEl = paux;
         }else{ // se nao
@@ -80,3 +81,4 @@ void MyList::DptoList::insertDpto(Dpto* d){
              << maxDpto << " departamentos." << endl; 
     }
 }
+

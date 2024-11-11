@@ -17,7 +17,11 @@ void Universidade::informaDptoList(){
     //         dptoP[i]->informaDpto();
     //     }
     // }
-    dptoList.showDptoList();
+    if(!dptoList.isEmpty()){
+        dptoList.showDptoList();
+    }else{
+        cerr << "Lista de departamento esta vazia!" << endl;
+    }
 }
 
 void Universidade::salvaUni(ofstream& f){
