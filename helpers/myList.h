@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../dpto.h"
+#include "../src/dpto.h"
 
 class MyList{
     public:

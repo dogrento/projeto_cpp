@@ -1,7 +1,7 @@
 build:
-	g++ -o main main.cpp pessoa.cpp principal.cpp universidade.cpp dpto.cpp professor.cpp aluno.cpp disc.cpp helpers/myList.cpp
+	g++ -o main main.cpp src/pessoa.cpp src/principal.cpp src/universidade.cpp src/dpto.cpp src/professor.cpp src/aluno.cpp src/disc.cpp helpers/myList.cpp
 test:
-	g++ -o tests/test tests/test.cpp dpto.cpp universidade.cpp helpers/myList.cpp
+	g++ -o tests/test tests/test.cpp src/dpto.cpp src/universidade.cpp helpers/myList.cpp
 testdb:
 	g++ -o tests/dbt tests/testdb.cpp -lsqlite3
 clean:

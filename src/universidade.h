@@ -7,7 +7,7 @@
 using namespace std;
 
 #include "dpto.h"
-#include "helpers/myList.h"
+#include "../helpers/myList.h"
 
 class Universidade{
 /*
