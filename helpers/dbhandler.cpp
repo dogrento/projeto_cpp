@@ -1,42 +1,16 @@
 #include "dbhandler.h"
 
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
-   int i;
-   for(i = 0; i<argc; i++) {
+    int i;
+    for(i = 0; i<argc; i++) {
       printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
-   }
-   printf("\n");
-   return 0;
+    }
+    printf("\n");
+    return 0;
 }
-
-DBHandler::DBHandler(const string p):
-db(nullptr),
-zErrMsg(nullptr),
-rc(-1)
-{
-    setPath(p);
-    rc = abrirDB();
-    if( rc ) {
-        cout << sqlite3_errmsg(db);
-    } else {
-        cout << "Opened database successfully." << endl;
-   }
-}
-
-DBHandler::DBHandler():
-db(nullptr),
-zErrMsg(nullptr),
-rc(-1),
-sql(nullptr),
-DBpath("")
-{}
-
-void DBHandler::setPath(const string p){
-    DBpath = p;
-}
-
+  
 int DBHandler::abrirDB(){
-    return sqlite3_open(DBpath.c_str(), &db);
+    return sqlite3_open(getAbsolutePath().c_str(), &db);
 }
 
 bool DBHandler::fecharDB(){
@@ -44,7 +18,7 @@ bool DBHandler::fecharDB(){
     return sqlite3_close(db);
 }
 
-bool DBHandler::tabelaExiste(string tabelaNome){
+bool DBHandler::tabelaExiste(const string tabelaNome){
     std::string query = "SELECT name FROM sqlite_master WHERE type='table' AND name='" + tabelaNome + "';";
     sqlite3_stmt* stmt;
     bool existe = false;
@@ -78,19 +52,26 @@ bool DBHandler::inserirDados(
     const string tableName, 
     const string properties, 
     const string values)
-{
-    string insertStr = "INSERT INTO " + tableName + '(' + properties + ')' + '\n'
-                        + "VALUES " + "(" + values + ");";
-    /* Execute SQL statement */
-    rc = sqlite3_exec(db, insertStr.c_str(), callback, 0, &zErrMsg);
-    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
-      sqlite3_free(zErrMsg);
-      return false;
-    } else {
-      fprintf(stdout, "Records created successfully\n");
-      return true;
+  {
+    if(!tabelaExiste(tableName)){
+        cout << "Tabela: " << tableName << " nao existe no bd." << endl;
+        cout << "Criando tabela: " << tableName << endl;
+        criarTabela(tableName);
+    }else{
+        string insertStr = "INSERT INTO " + tableName + '(' + properties + ')' + '\n'
+                            + "VALUES " + "(" + values + ");";
+        /* Execute SQL statement */
+        rc = sqlite3_exec(db, insertStr.c_str(), callback, 0, &zErrMsg);
+        if( rc != SQLITE_OK ){
+          fprintf(stderr, "SQL error: %s\n", zErrMsg);
+          sqlite3_free(zErrMsg);
+          return false;
+        } else {
+          fprintf(stdout, "Records created successfully\n");
+          return true;
+        }
     }
+    return false;
 }
 
 bool DBHandler::recuperarDados(const string item, const string tabelaNome){
